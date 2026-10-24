@@ -1,0 +1,85 @@
+{
+  "evraklar": [
+    {
+      "id": "zumre-donem-basi",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — dönem başı",
+      "donem": "1. dönem başı",
+      "dosya": "zumre-donem-basi.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "zumre-donem-sonu",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — dönem sonu",
+      "donem": "1. dönem sonu",
+      "dosya": "zumre-donem-sonu.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "sok",
+      "kategori": "sok",
+      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı",
+      "donem": "Dönem başı / sonu",
+      "dosya": "sok.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "yillik-plan",
+      "kategori": "yillik-plan",
+      "ad": "Yıllık plan şablonu",
+      "donem": "Eğitim-öğretim yılı",
+      "dosya": "yillik-plan.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "kulup-yillik-plan",
+      "kategori": "kulup",
+      "ad": "Kulüp yıllık çalışma planı",
+      "donem": "Eğitim-öğretim yılı",
+      "dosya": "kulup-yillik-plan.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "kulup-tutanak",
+      "kategori": "kulup",
+      "ad": "Kulüp toplantı tutanağı",
+      "donem": "Her toplantı",
+      "dosya": "kulup-tutanak.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "veli-toplanti",
+      "kategori": "veli",
+      "ad": "Veli toplantısı tutanağı",
+      "donem": "Dönem başı / sonu",
+      "dosya": "veli-toplanti.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    },
+    {
+      "id": "rehberlik-plan",
+      "kategori": "rehberlik",
+      "ad": "Sınıf rehberlik yıllık çalışma planı",
+      "donem": "Eğitim-öğretim yılı",
+      "dosya": "rehberlik-plan.docx",
+      "brans": null,
+      "tarih": "2026-10-24",
+      "bos": true
+    }
+  ],
+  "guncelleme": "2026-10-24"
+}
