@@ -1,6 +1,6 @@
-# Mamoste evrak şablonları
+# Okul evrak şablonları
 
-Mamoste uygulamasındaki **Evraklar** bölümü bu klasörden okur. Uygulamayı yeniden derlemeye gerek yok:
+Okul uygulamasındaki **Evraklar** bölümü bu klasörden okur. Uygulamayı yeniden derlemeye gerek yok:
 dosyayı buraya koyup `liste.json`'a satırını ekleyip gönderince (git push) öğretmenler birkaç dakika içinde görür.
 
 ## Yeni / güncel şablon eklemek
@@ -24,7 +24,7 @@ dosyayı buraya koyup `liste.json`'a satırını ekleyip gönderince (git push) 
 - `brans`: `null` = bütün öğretmenler; yalnız bir branşa ise branş kimliği (`ingilizce`, `turkce`, `matematik`, `fen`, `sosyal`, `inkilap`, `din`, `teknoloji-tasarim`, `gorsel`, `muzik`, `beden`, `bilisim`)
 - `tarih`: güncelleme günü (YYYY-AA-GG). Tarih değişince öğretmende **YENİ** etiketi çıkar.
 - Yıllık planlar `yillik-plan/<branş>-<sınıf>.docx` (MEB 2026-2027 çerçeve planlarından, `brans` dolu: yalnız o branşın öğretmeni görür).
-- Ana Mamoste deposunda `node tools/evrak/sablon.mjs` bütün tutanakları ve yıllık planları yeniden üretir (mevzuat değişince metinleri orada güncelle).
+- Ana uygulama deposunda `node tools/evrak/sablon.mjs` bütün tutanakları ve yıllık planları yeniden üretir (mevzuat değişince metinleri orada güncelle).
 
 ## Uygulamanın kendiliğinden doldurduğu yer tutucular
 

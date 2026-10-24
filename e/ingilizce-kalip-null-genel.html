@@ -358,7 +358,7 @@ document.addEventListener('keydown',e=>{if(!$('oyun').classList.contains('aktif'
   const k=e.key.toLowerCase();
   if(k==='arrowright'||k==='enter'){e.preventDefault();git(1)}else if(k==='arrowleft'){e.preventDefault();git(-1)}
   else if(k===' '){e.preventDefault();acik=!acik;goster()}else if(k==='d')cevapla(true);else if(k==='y')cevapla(false);else if(k==='s')soz()});
-// --- Uzaktan kumanda: Mamoste Tahta sayfası (iframe'in sahibi) telefondan gelen komutu postMessage ile iletir;
+// --- Uzaktan kumanda: Okul Tahta sayfası (iframe'in sahibi) telefondan gelen komutu postMessage ile iletir;
 // oyun her değişiklikte durumunu geri bildirir (telefonda cümle, puan, sıra görünsün). Tek dosya olarak açılınca etkisiz.
 const USTTE=window.parent&&window.parent!==window;
 let sozSon=null;
