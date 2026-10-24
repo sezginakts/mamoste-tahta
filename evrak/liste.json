@@ -1,44 +1,68 @@
 {
+  "guncelleme": "2026-10-24",
   "evraklar": [
     {
-      "id": "zumre-donem-basi",
+      "id": "zumre-yil-basi",
       "kategori": "zumre",
-      "ad": "Zümre öğretmenler kurulu tutanağı — dönem başı",
-      "donem": "1. dönem başı",
-      "dosya": "zumre-donem-basi.docx",
+      "ad": "Zümre öğretmenler kurulu tutanağı — yıl başı",
+      "donem": "Eylül · eğitim-öğretim yılı başı",
+      "dosya": "zumre-yil-basi.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "zumre-donem-sonu",
+      "id": "zumre-2-donem-basi",
       "kategori": "zumre",
-      "ad": "Zümre öğretmenler kurulu tutanağı — dönem sonu",
-      "donem": "1. dönem sonu",
-      "dosya": "zumre-donem-sonu.docx",
+      "ad": "Zümre öğretmenler kurulu tutanağı — 2. dönem başı",
+      "donem": "Şubat · ikinci dönem başı",
+      "dosya": "zumre-2-donem-basi.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "sok",
+      "id": "zumre-yil-sonu",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — yıl sonu",
+      "donem": "Haziran · eğitim-öğretim yılı sonu",
+      "dosya": "zumre-yil-sonu.docx",
+      "brans": null,
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "sok-donem-basi",
       "kategori": "sok",
-      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı",
-      "donem": "Dönem başı / sonu",
-      "dosya": "sok.docx",
+      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı — dönem başı",
+      "donem": "Dönem başı",
+      "dosya": "sok-donem-basi.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "yillik-plan",
-      "kategori": "yillik-plan",
-      "ad": "Yıllık plan şablonu",
-      "donem": "Eğitim-öğretim yılı",
-      "dosya": "yillik-plan.docx",
+      "id": "sok-donem-sonu",
+      "kategori": "sok",
+      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı — dönem sonu",
+      "donem": "Dönem sonu (teşekkür-takdir)",
+      "dosya": "sok-donem-sonu.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "veli-1-donem",
+      "kategori": "veli",
+      "ad": "Veli toplantısı tutanağı — 1. dönem",
+      "donem": "Birinci dönem",
+      "dosya": "veli-1-donem.docx",
+      "brans": null,
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "veli-2-donem",
+      "kategori": "veli",
+      "ad": "Veli toplantısı tutanağı — 2. dönem",
+      "donem": "İkinci dönem",
+      "dosya": "veli-2-donem.docx",
+      "brans": null,
+      "tarih": "2026-10-24"
     },
     {
       "id": "kulup-yillik-plan",
@@ -47,39 +71,394 @@
       "donem": "Eğitim-öğretim yılı",
       "dosya": "kulup-yillik-plan.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "kulup-tutanak",
+      "id": "kulup-ilk-toplanti",
       "kategori": "kulup",
-      "ad": "Kulüp toplantı tutanağı",
-      "donem": "Her toplantı",
-      "dosya": "kulup-tutanak.docx",
+      "ad": "Kulüp ilk genel kurul toplantı tutanağı",
+      "donem": "Eylül · yıl başı",
+      "dosya": "kulup-ilk-toplanti.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "veli-toplanti",
-      "kategori": "veli",
-      "ad": "Veli toplantısı tutanağı",
-      "donem": "Dönem başı / sonu",
-      "dosya": "veli-toplanti.docx",
+      "id": "kulup-yil-sonu-rapor",
+      "kategori": "kulup",
+      "ad": "Kulüp yıl sonu faaliyet raporu",
+      "donem": "Haziran · yıl sonu",
+      "dosya": "kulup-yil-sonu-rapor.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
     },
     {
-      "id": "rehberlik-plan",
+      "id": "rehberlik-yillik-plan",
       "kategori": "rehberlik",
       "ad": "Sınıf rehberlik yıllık çalışma planı",
       "donem": "Eğitim-öğretim yılı",
-      "dosya": "rehberlik-plan.docx",
+      "dosya": "rehberlik-yillik-plan.docx",
       "brans": null,
-      "tarih": "2026-10-24",
-      "bos": true
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-ingilizce-5",
+      "kategori": "yillik-plan",
+      "ad": "İngilizce 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/ingilizce-5.docx",
+      "brans": "ingilizce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-ingilizce-6",
+      "kategori": "yillik-plan",
+      "ad": "İngilizce 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/ingilizce-6.docx",
+      "brans": "ingilizce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-ingilizce-7",
+      "kategori": "yillik-plan",
+      "ad": "İngilizce 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/ingilizce-7.docx",
+      "brans": "ingilizce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-ingilizce-8",
+      "kategori": "yillik-plan",
+      "ad": "İngilizce 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/ingilizce-8.docx",
+      "brans": "ingilizce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-teknoloji-tasarim-7",
+      "kategori": "yillik-plan",
+      "ad": "Teknoloji ve Tasarım 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/teknoloji-tasarim-7.docx",
+      "brans": "teknoloji-tasarim",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-teknoloji-tasarim-8",
+      "kategori": "yillik-plan",
+      "ad": "Teknoloji ve Tasarım 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/teknoloji-tasarim-8.docx",
+      "brans": "teknoloji-tasarim",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-turkce-5",
+      "kategori": "yillik-plan",
+      "ad": "Türkçe 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/turkce-5.docx",
+      "brans": "turkce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-turkce-6",
+      "kategori": "yillik-plan",
+      "ad": "Türkçe 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/turkce-6.docx",
+      "brans": "turkce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-turkce-7",
+      "kategori": "yillik-plan",
+      "ad": "Türkçe 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/turkce-7.docx",
+      "brans": "turkce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-turkce-8",
+      "kategori": "yillik-plan",
+      "ad": "Türkçe 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/turkce-8.docx",
+      "brans": "turkce",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-matematik-5",
+      "kategori": "yillik-plan",
+      "ad": "Matematik 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/matematik-5.docx",
+      "brans": "matematik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-matematik-6",
+      "kategori": "yillik-plan",
+      "ad": "Matematik 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/matematik-6.docx",
+      "brans": "matematik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-matematik-7",
+      "kategori": "yillik-plan",
+      "ad": "Matematik 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/matematik-7.docx",
+      "brans": "matematik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-matematik-8",
+      "kategori": "yillik-plan",
+      "ad": "Matematik 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/matematik-8.docx",
+      "brans": "matematik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-fen-5",
+      "kategori": "yillik-plan",
+      "ad": "Fen Bilimleri 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/fen-5.docx",
+      "brans": "fen",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-fen-6",
+      "kategori": "yillik-plan",
+      "ad": "Fen Bilimleri 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/fen-6.docx",
+      "brans": "fen",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-fen-7",
+      "kategori": "yillik-plan",
+      "ad": "Fen Bilimleri 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/fen-7.docx",
+      "brans": "fen",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-fen-8",
+      "kategori": "yillik-plan",
+      "ad": "Fen Bilimleri 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/fen-8.docx",
+      "brans": "fen",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-sosyal-5",
+      "kategori": "yillik-plan",
+      "ad": "Sosyal Bilgiler 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/sosyal-5.docx",
+      "brans": "sosyal",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-sosyal-6",
+      "kategori": "yillik-plan",
+      "ad": "Sosyal Bilgiler 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/sosyal-6.docx",
+      "brans": "sosyal",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-sosyal-7",
+      "kategori": "yillik-plan",
+      "ad": "Sosyal Bilgiler 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/sosyal-7.docx",
+      "brans": "sosyal",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-inkilap-8",
+      "kategori": "yillik-plan",
+      "ad": "T.C. İnkılap Tarihi ve Atatürkçülük 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/inkilap-8.docx",
+      "brans": "inkilap",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-din-5",
+      "kategori": "yillik-plan",
+      "ad": "Din Kültürü ve Ahlak Bilgisi 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/din-5.docx",
+      "brans": "din",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-din-6",
+      "kategori": "yillik-plan",
+      "ad": "Din Kültürü ve Ahlak Bilgisi 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/din-6.docx",
+      "brans": "din",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-din-7",
+      "kategori": "yillik-plan",
+      "ad": "Din Kültürü ve Ahlak Bilgisi 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/din-7.docx",
+      "brans": "din",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-din-8",
+      "kategori": "yillik-plan",
+      "ad": "Din Kültürü ve Ahlak Bilgisi 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/din-8.docx",
+      "brans": "din",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-gorsel-5",
+      "kategori": "yillik-plan",
+      "ad": "Görsel Sanatlar 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/gorsel-5.docx",
+      "brans": "gorsel",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-gorsel-6",
+      "kategori": "yillik-plan",
+      "ad": "Görsel Sanatlar 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/gorsel-6.docx",
+      "brans": "gorsel",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-gorsel-7",
+      "kategori": "yillik-plan",
+      "ad": "Görsel Sanatlar 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/gorsel-7.docx",
+      "brans": "gorsel",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-gorsel-8",
+      "kategori": "yillik-plan",
+      "ad": "Görsel Sanatlar 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/gorsel-8.docx",
+      "brans": "gorsel",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-muzik-5",
+      "kategori": "yillik-plan",
+      "ad": "Müzik 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/muzik-5.docx",
+      "brans": "muzik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-muzik-6",
+      "kategori": "yillik-plan",
+      "ad": "Müzik 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/muzik-6.docx",
+      "brans": "muzik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-muzik-7",
+      "kategori": "yillik-plan",
+      "ad": "Müzik 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/muzik-7.docx",
+      "brans": "muzik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-muzik-8",
+      "kategori": "yillik-plan",
+      "ad": "Müzik 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/muzik-8.docx",
+      "brans": "muzik",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-beden-5",
+      "kategori": "yillik-plan",
+      "ad": "Beden Eğitimi ve Spor 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/beden-5.docx",
+      "brans": "beden",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-beden-6",
+      "kategori": "yillik-plan",
+      "ad": "Beden Eğitimi ve Spor 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/beden-6.docx",
+      "brans": "beden",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-beden-7",
+      "kategori": "yillik-plan",
+      "ad": "Beden Eğitimi ve Spor 7. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/beden-7.docx",
+      "brans": "beden",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-beden-8",
+      "kategori": "yillik-plan",
+      "ad": "Beden Eğitimi ve Spor 8. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/beden-8.docx",
+      "brans": "beden",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-bilisim-5",
+      "kategori": "yillik-plan",
+      "ad": "Bilişim Teknolojileri ve Yazılım 5. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/bilisim-5.docx",
+      "brans": "bilisim",
+      "tarih": "2026-10-24"
+    },
+    {
+      "id": "yillik-plan-bilisim-6",
+      "kategori": "yillik-plan",
+      "ad": "Bilişim Teknolojileri ve Yazılım 6. sınıf yıllık planı",
+      "donem": "2026-2027 · MEB çerçeve planı",
+      "dosya": "yillik-plan/bilisim-6.docx",
+      "brans": "bilisim",
+      "tarih": "2026-10-24"
     }
-  ],
-  "guncelleme": "2026-10-24"
+  ]
 }

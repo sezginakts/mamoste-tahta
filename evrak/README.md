@@ -23,7 +23,8 @@ dosyayı buraya koyup `liste.json`'a satırını ekleyip gönderince (git push) 
 - `kategori`: `zumre` · `sok` · `yillik-plan` · `kulup` · `veli` · `rehberlik`
 - `brans`: `null` = bütün öğretmenler; yalnız bir branşa ise branş kimliği (`ingilizce`, `turkce`, `matematik`, `fen`, `sosyal`, `inkilap`, `din`, `teknoloji-tasarim`, `gorsel`, `muzik`, `beden`, `bilisim`)
 - `tarih`: güncelleme günü (YYYY-AA-GG). Tarih değişince öğretmende **YENİ** etiketi çıkar.
-- `bos: true` yalnız boş iskelet şablonlarda; gerçek şablonda bu alanı sil.
+- Yıllık planlar `yillik-plan/<branş>-<sınıf>.docx` (MEB 2026-2027 çerçeve planlarından, `brans` dolu: yalnız o branşın öğretmeni görür).
+- Ana Mamoste deposunda `node tools/evrak/sablon.mjs` bütün tutanakları ve yıllık planları yeniden üretir (mevzuat değişince metinleri orada güncelle).
 
 ## Uygulamanın kendiliğinden doldurduğu yer tutucular
 
