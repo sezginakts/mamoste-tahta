@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Okul — iPhone kurulumu</title>
+	<style>
+		body { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; background: #F1F5F9; color: #0f172a; margin: 0; padding: 32px 20px; text-align: center; }
+		.card { max-width: 480px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 28px 24px; box-shadow: 0 8px 24px rgba(15, 23, 42, .08); }
+		h1 { font-size: 22px; margin: 0 0 6px; }
+		p { color: #475569; line-height: 1.5; font-size: 15px; }
+		.btn { display: block; margin: 22px 0 8px; padding: 16px; border-radius: 14px; background: #2563eb; color: #fff; text-decoration: none; font-weight: 600; font-size: 17px; }
+		.btn:active { background: #1d4ed8; }
+		small { color: #64748b; display: block; margin-top: 18px; line-height: 1.5; }
+		code { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; font-size: 13px; }
+	</style>
+</head>
+<body>
+	<div class="card">
+		<h1>Okul</h1>
+		<p>sürüm 1.0.0 · iPhone / iPad</p>
+		<a class="btn" href="itms-services://?action=download-manifest&amp;url=https://sezginakts.github.io/mamoste-tahta/okul/manifest.plist">Kur</a>
+		<p id="tip">Bu sayfayı <strong>Safari</strong>'de açın; "Kur" deyin, ana ekrana eklenen simgeye dokunun.</p>
+		<small>
+			Kurulum yalnızca bu yapıya kayıtlı cihazlarda çalışır (Ad Hoc).<br>
+			"Yüklenemiyor" derse cihaz kayıtlı değildir — UDID eklenip yeniden derlenmesi gerekir.<br>
+			Uygulama 2 Mart 2027'ye kadar çalışır, sonrasında yeniden imzalanmalıdır.
+		</small>
+	</div>
+	<script>
+		if (!/Safari/.test(navigator.userAgent) || /CriOS|FxiOS|EdgiOS/.test(navigator.userAgent)) {
+			document.getElementById('tip').innerHTML = 'Bu sayfayı <strong>Safari</strong> ile açmanız gerekiyor (Chrome değil).';
+		}
+	</script>
+</body>
+</html>
