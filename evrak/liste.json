@@ -1,5 +1,5 @@
 {
-  "guncelleme": "2026-10-24",
+  "guncelleme": "2026-10-26",
   "evraklar": [
     {
       "id": "zumre-yil-basi",
@@ -459,6 +459,192 @@
       "dosya": "yillik-plan/bilisim-6.docx",
       "brans": "bilisim",
       "tarih": "2026-10-24"
+    },
+    {
+      "id": "sinav-analiz-formu",
+      "kategori": "sinav",
+      "ad": "Sınav analiz formu",
+      "donem": "Her sınavdan sonra",
+      "dosya": "sinav/sinav-analiz-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "sinav-kagidi-teslim",
+      "kategori": "sinav",
+      "ad": "Sınav kâğıdı teslim tutanağı",
+      "donem": "Sınav sonrası",
+      "dosya": "sinav/sinav-kagidi-teslim-tutanagi.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "not-cizelgesi",
+      "kategori": "sinav",
+      "ad": "Yazılı ve uygulamalı not çizelgesi",
+      "donem": "Her dönem",
+      "dosya": "sinav/not-cizelgesi.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "gozlem-formu",
+      "kategori": "olcme",
+      "ad": "Gözlem formu",
+      "donem": "Süreç değerlendirme",
+      "dosya": "olcme/gozlem-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "kontrol-listesi",
+      "kategori": "olcme",
+      "ad": "Kontrol listesi",
+      "donem": "Süreç değerlendirme",
+      "dosya": "olcme/kontrol-listesi.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "dereceli-puanlama",
+      "kategori": "olcme",
+      "ad": "Dereceli puanlama anahtarı (rubrik)",
+      "donem": "Performans değerlendirme",
+      "dosya": "olcme/dereceli-puanlama-anahtari.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "oz-degerlendirme",
+      "kategori": "olcme",
+      "ad": "Öz değerlendirme formu",
+      "donem": "Süreç değerlendirme",
+      "dosya": "olcme/oz-degerlendirme-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "akran-degerlendirme",
+      "kategori": "olcme",
+      "ad": "Akran değerlendirme formu",
+      "donem": "Grup çalışmaları",
+      "dosya": "olcme/akran-degerlendirme-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "urun-dosyasi",
+      "kategori": "olcme",
+      "ad": "Ürün dosyası (portfolyo) takip formu",
+      "donem": "Dönem boyunca",
+      "dosya": "olcme/urun-dosyasi-takip.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "performans-gorevi",
+      "kategori": "olcme",
+      "ad": "Performans görevi yönergesi",
+      "donem": "Performans görevi",
+      "dosya": "olcme/performans-gorevi.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "proje-odevi",
+      "kategori": "olcme",
+      "ad": "Proje ödevi yönergesi ve dağıtım listesi",
+      "donem": "Proje ödevi",
+      "dosya": "olcme/proje-odevi.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "sinif-ogrenci-listesi",
+      "kategori": "sinif",
+      "ad": "Sınıf öğrenci listesi",
+      "donem": "Dönem başı",
+      "dosya": "sinif/sinif-ogrenci-listesi.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "oturma-plani",
+      "kategori": "sinif",
+      "ad": "Sınıf oturma planı",
+      "donem": "Dönem başı",
+      "dosya": "sinif/oturma-plani.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "nobet-listesi",
+      "kategori": "sinif",
+      "ad": "Sınıf nöbet listesi",
+      "donem": "Her ay",
+      "dosya": "sinif/nobet-listesi.docx",
+      "brans": null,
+      "tarih": "2026-10-26",
+      "ogrenci": true
+    },
+    {
+      "id": "veli-gorusme",
+      "kategori": "sinif",
+      "ad": "Veli görüşme tutanağı",
+      "donem": "Görüşme sonrası",
+      "dosya": "sinif/veli-gorusme-tutanagi.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "ev-ziyareti",
+      "kategori": "sinif",
+      "ad": "Ev ziyareti formu",
+      "donem": "Ziyaret sonrası",
+      "dosya": "sinif/ev-ziyareti-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "ogrenci-tanima",
+      "kategori": "sinif",
+      "ad": "Öğrenci tanıma formu",
+      "donem": "Dönem başı",
+      "dosya": "sinif/ogrenci-tanima-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "ders-kesim",
+      "kategori": "sinif",
+      "ad": "Ders kesim raporu",
+      "donem": "Yıl sonu",
+      "dosya": "sinif/ders-kesim-raporu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "veli-izin",
+      "kategori": "sinif",
+      "ad": "Veli izin formu",
+      "donem": "Etkinlik / gezi öncesi",
+      "dosya": "sinif/veli-izin-formu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
+    },
+    {
+      "id": "rehberlik-donem-raporu",
+      "kategori": "rehberlik",
+      "ad": "Sınıf rehberlik dönem raporu",
+      "donem": "Dönem sonu",
+      "dosya": "rehberlik-donem-raporu.docx",
+      "brans": null,
+      "tarih": "2026-10-26"
     }
   ]
 }
