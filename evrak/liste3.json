@@ -1255,6 +1255,197 @@
         "sinif"
       ],
       "surum": 3
+    },
+    {
+      "id": "bep-birim-tutanak",
+      "kategori": "bep",
+      "ad": "BEP geliştirme birimi toplantı tutanağı",
+      "kisa": "BEP Geliştirme Birimi Toplantı Tutanağı",
+      "donem": "Eylül · BEP hazırlanmadan önce",
+      "gun": "09-25",
+      "brans": null,
+      "dosya": "v3/bep-birim-tutanak.docx",
+      "tarih": "2026-10-29",
+      "iz": "47b93a6bdd8f",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "mudur_yrd",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "rehber_ogretmen",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "bep-performans",
+      "kategori": "bep",
+      "ad": "BEP eğitsel performans belirleme formu",
+      "kisa": "Eğitsel Performans Belirleme Formu",
+      "donem": "BEP’ten önce · kaba değerlendirme",
+      "gun": "09-30",
+      "brans": null,
+      "dosya": "v3/bep-performans.docx",
+      "tarih": "2026-10-29",
+      "iz": "24f7541fe4dc",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih",
+        "uniteler"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "bep-formu",
+      "kategori": "bep",
+      "ad": "Bireyselleştirilmiş eğitim programı (BEP)",
+      "kisa": "BEP Formu (ders planı)",
+      "donem": "Ekim başı · yıl boyunca uygulanır",
+      "gun": "10-09",
+      "brans": null,
+      "dosya": "v3/bep-formu.docx",
+      "tarih": "2026-10-29",
+      "iz": "7baf6e5d81e7",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "mudur_yrd",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "rehber_ogretmen",
+        "sinif",
+        "tarih",
+        "uniteler"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "bep-veli-bilgilendirme",
+      "kategori": "bep",
+      "ad": "BEP veli bilgilendirme ve görüş formu",
+      "kisa": "Veli Bilgilendirme ve Görüş Formu",
+      "donem": "BEP hazırlanınca",
+      "gun": "10-09",
+      "brans": null,
+      "dosya": "v3/bep-veli-bilgilendirme.docx",
+      "tarih": "2026-10-29",
+      "iz": "9dc15ca1c59f",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "ilce",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "bep-sinav-uyarlama",
+      "kategori": "bep",
+      "ad": "BEP sınav uyarlama formu",
+      "kisa": "Sınav Uyarlama Formu",
+      "donem": "Her yazılı sınavdan önce",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/bep-sinav-uyarlama.docx",
+      "tarih": "2026-10-29",
+      "iz": "42c03a648f99",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "donem",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "bep-donem-degerlendirme",
+      "kategori": "bep",
+      "ad": "BEP dönem sonu değerlendirme raporu",
+      "kisa": "Dönem Sonu Değerlendirme Raporu",
+      "donem": "Her dönemin son haftası",
+      "gun": [
+        "@donem1_sonu-5",
+        "@ders_sonu-5"
+      ],
+      "brans": null,
+      "dosya": "v3/bep-donem-degerlendirme.docx",
+      "tarih": "2026-10-29",
+      "iz": "aef4c1467b67",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "donem",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "mudur_yrd",
+        "ogrenci_ad",
+        "ogrenci_no",
+        "ogretmen",
+        "okul",
+        "rehber_ogretmen",
+        "sinif",
+        "tarih",
+        "uniteler"
+      ],
+      "ister": [
+        "ogrenci",
+        "sinif"
+      ],
+      "surum": 3
     }
   ]
 }
