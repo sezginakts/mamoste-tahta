@@ -1,0 +1,1260 @@
+{
+  "surum": 3,
+  "guncelleme": "2026-10-29",
+  "evraklar": [
+    {
+      "id": "zumre-yil-basi",
+      "gun": "09-08",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — yıl başı",
+      "donem": "Eylül · eğitim-öğretim yılı başı",
+      "brans": null,
+      "dosya": "v3/zumre-yil-basi.docx",
+      "tarih": "2026-10-29",
+      "iz": "3591a05ca157",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "okul",
+        "tarih",
+        "zumre",
+        "zumre_baskani"
+      ],
+      "ister": [],
+      "surum": 3
+    },
+    {
+      "id": "zumre-2-donem-basi",
+      "gun": "02-03",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — 2. dönem başı",
+      "donem": "Şubat · ikinci dönem başı",
+      "brans": null,
+      "dosya": "v3/zumre-2-donem-basi.docx",
+      "tarih": "2026-10-29",
+      "iz": "60e49e9cf8d0",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "okul",
+        "tarih",
+        "zumre",
+        "zumre_baskani"
+      ],
+      "ister": [],
+      "surum": 3
+    },
+    {
+      "id": "zumre-yil-sonu",
+      "gun": "06-28",
+      "kategori": "zumre",
+      "ad": "Zümre öğretmenler kurulu tutanağı — yıl sonu",
+      "donem": "Haziran · eğitim-öğretim yılı sonu",
+      "brans": null,
+      "dosya": "v3/zumre-yil-sonu.docx",
+      "tarih": "2026-10-29",
+      "iz": "fb08d5cea893",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "okul",
+        "tarih",
+        "zumre",
+        "zumre_baskani"
+      ],
+      "ister": [],
+      "surum": 3
+    },
+    {
+      "id": "sok-donem-basi",
+      "gun": [
+        "09-25",
+        "02-12"
+      ],
+      "kategori": "sok",
+      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı — dönem başı",
+      "donem": "Dönem başı",
+      "brans": null,
+      "dosya": "v3/sok-donem-basi.docx",
+      "tarih": "2026-10-29",
+      "iz": "30bf13cb5e53",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "ogrenci_sayisi",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "sok-donem-sonu",
+      "gun": [
+        "@donem1_sonu-5",
+        "@ders_sonu-5"
+      ],
+      "kategori": "sok",
+      "ad": "Şube öğretmenler kurulu (ŞÖK) tutanağı — dönem sonu",
+      "donem": "Dönem sonu (teşekkür-takdir)",
+      "brans": null,
+      "dosya": "v3/sok-donem-sonu.docx",
+      "tarih": "2026-10-29",
+      "iz": "7f652f6bdc8e",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "ogrenci_sayisi",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "yillik-plan",
+      "kategori": "yillik-plan",
+      "ad": "Yıllık plan",
+      "donem": "Ders yılı başı · sınıf düzeyi seçilir",
+      "gun": "@ders_basi",
+      "brans": null,
+      "dosya": "v3/yillik-plan.docx",
+      "tarih": "2026-10-29",
+      "iz": "a1e4c25cfbc4",
+      "etiketler": [
+        "brans",
+        "duzey",
+        "egitim_yili",
+        "haftalar",
+        "ilce",
+        "mudur",
+        "ogretmen",
+        "okul",
+        "plan_kaynagi",
+        "tarih"
+      ],
+      "ister": [
+        "duzey"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "sinav-analiz-formu",
+      "kategori": "sinav",
+      "ad": "Sınav analiz formu",
+      "donem": "Her sınavdan sonra",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/sinav-analiz-formu.docx",
+      "tarih": "2026-10-29",
+      "iz": "b85e8d761111",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "ogrenci_sayisi",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "sinav-kagidi-teslim",
+      "kategori": "sinav",
+      "ad": "Sınav kâğıdı teslim tutanağı",
+      "donem": "Sınav sonrası",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/sinav-kagidi-teslim.docx",
+      "tarih": "2026-10-29",
+      "iz": "9f5579502e90",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "not-cizelgesi",
+      "kategori": "sinav",
+      "ad": "Yazılı ve uygulamalı not çizelgesi",
+      "donem": "Her dönem",
+      "gun": [
+        "@donem1_sonu-5",
+        "@ders_sonu-5"
+      ],
+      "brans": null,
+      "dosya": "v3/not-cizelgesi.docx",
+      "tarih": "2026-10-29",
+      "iz": "d4785d3cabec",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "ogretmen",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "gozlem-formu",
+      "kategori": "olcme",
+      "ad": "Gözlem formu",
+      "donem": "Süreç değerlendirme",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/gozlem-formu.docx",
+      "tarih": "2026-10-29",
+      "iz": "d8cf2156afef",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "ogrenciler",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kontrol-listesi",
+      "kategori": "olcme",
+      "ad": "Kontrol listesi",
+      "donem": "Süreç değerlendirme",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/kontrol-listesi.docx",
+      "tarih": "2026-10-29",
+      "iz": "5dc14b7ff4a2",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "ogrenciler",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "dereceli-puanlama",
+      "kategori": "olcme",
+      "ad": "Dereceli puanlama anahtarı (rubrik)",
+      "donem": "Performans değerlendirme",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/dereceli-puanlama.docx",
+      "tarih": "2026-10-29",
+      "iz": "3d63d96af1b1",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "oz-degerlendirme",
+      "kategori": "olcme",
+      "ad": "Öz değerlendirme formu",
+      "donem": "Süreç değerlendirme",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/oz-degerlendirme.docx",
+      "tarih": "2026-10-29",
+      "iz": "bb2bbf177303",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "ogrenci_sayfalari",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "akran-degerlendirme",
+      "kategori": "olcme",
+      "ad": "Akran değerlendirme formu",
+      "donem": "Grup çalışmaları",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/akran-degerlendirme.docx",
+      "tarih": "2026-10-29",
+      "iz": "b51d4a043255",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "urun-dosyasi",
+      "kategori": "olcme",
+      "ad": "Ürün dosyası (portfolyo) takip formu",
+      "donem": "Dönem boyunca",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/urun-dosyasi.docx",
+      "tarih": "2026-10-29",
+      "iz": "d4e28123edcd",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "ogrenciler",
+        "ogretmen",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "performans-gorevi",
+      "kategori": "olcme",
+      "ad": "Performans görevi yönergesi",
+      "donem": "Performans görevi",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/performans-gorevi.docx",
+      "tarih": "2026-10-29",
+      "iz": "3633739355cd",
+      "etiketler": [
+        "brans",
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "ogretmen",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "proje-odevi",
+      "kategori": "olcme",
+      "ad": "Proje ödevi yönergesi ve dağıtım listesi",
+      "donem": "Proje ödevi",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/proje-odevi.docx",
+      "tarih": "2026-10-29",
+      "iz": "94436f34a198",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "ogrenciler",
+        "ogretmen",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-yillik-plan",
+      "kategori": "kulup",
+      "ad": "Kulüp yıllık çalışma planı",
+      "kisa": "Yıllık Plan",
+      "donem": "Eylül sonu · sene başı toplantısından sonra",
+      "gun": "10-02",
+      "brans": null,
+      "dosya": "v3/kulup-yillik-plan.docx",
+      "tarih": "2026-10-29",
+      "iz": "837fcaca12ab",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-ilk-toplanti",
+      "kategori": "kulup",
+      "ad": "Kulüp sene başı toplantı tutanağı",
+      "kisa": "Sene Başı Toplantısı",
+      "donem": "Eylül · ilk genel kurul",
+      "gun": "09-25",
+      "brans": null,
+      "dosya": "v3/kulup-ilk-toplanti.docx",
+      "tarih": "2026-10-29",
+      "iz": "f696d2bcaec8",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-2-donem-basi",
+      "kategori": "kulup",
+      "ad": "Kulüp ikinci dönem başı toplantı tutanağı",
+      "kisa": "İkinci Dönem Başı Toplantısı",
+      "donem": "Şubat · ikinci dönemin ilk haftası",
+      "gun": "@donem2_basi+4",
+      "brans": null,
+      "dosya": "v3/kulup-2-donem-basi.docx",
+      "tarih": "2026-10-29",
+      "iz": "89d7ab5535dd",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-sene-sonu-toplanti",
+      "kategori": "kulup",
+      "ad": "Kulüp sene sonu toplantı tutanağı",
+      "kisa": "Sene Sonu Toplantısı",
+      "donem": "Haziran · sene sonu genel kurulu",
+      "gun": "@ders_sonu-10",
+      "brans": null,
+      "dosya": "v3/kulup-sene-sonu-toplanti.docx",
+      "tarih": "2026-10-29",
+      "iz": "c34debe701cf",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-1-donem-rapor",
+      "kategori": "kulup",
+      "ad": "Kulüp birinci dönem sonu raporu",
+      "kisa": "Birinci Dönem Sonu Raporu",
+      "donem": "Ocak · birinci dönemin son haftası",
+      "gun": "@donem1_sonu-2",
+      "brans": null,
+      "dosya": "v3/kulup-1-donem-rapor.docx",
+      "tarih": "2026-10-29",
+      "iz": "07c6e6cc87bf",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-yil-sonu-rapor",
+      "kategori": "kulup",
+      "ad": "Kulüp yıl sonu faaliyet raporu",
+      "kisa": "Yıl Sonu Raporu",
+      "donem": "Haziran · ders yılının son haftaları",
+      "gun": "@ders_sonu-5",
+      "brans": null,
+      "dosya": "v3/kulup-yil-sonu-rapor.docx",
+      "tarih": "2026-10-29",
+      "iz": "ce08f778620e",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-tuzuk",
+      "kategori": "kulup",
+      "ad": "Kulüp tüzüğü",
+      "kisa": "Kulüp Tüzüğü",
+      "donem": "Eylül · sene başı toplantısında kabul edilir",
+      "gun": "09-25",
+      "brans": null,
+      "dosya": "v3/kulup-tuzuk.docx",
+      "tarih": "2026-10-29",
+      "iz": "70c1bf6286ac",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-veli-izin",
+      "kategori": "kulup",
+      "ad": "Kulüp veli izin belgesi",
+      "kisa": "Veli İzin Belgesi",
+      "donem": "Gezi / okul dışı etkinlikten önce",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/kulup-veli-izin.docx",
+      "tarih": "2026-10-29",
+      "iz": "1a50aa561117",
+      "etiketler": [
+        "ilce",
+        "kulup",
+        "kulup_danisman",
+        "mudur",
+        "okul",
+        "tarih",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-09",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Eylül",
+      "kisa": "Eylül",
+      "donem": "Eylül sonu",
+      "gun": "ay-sonu:09",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-09.docx",
+      "tarih": "2026-10-29",
+      "iz": "62b572718c3d",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-10",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Ekim",
+      "kisa": "Ekim",
+      "donem": "Ekim sonu",
+      "gun": "ay-sonu:10",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-10.docx",
+      "tarih": "2026-10-29",
+      "iz": "9dea1dc14849",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-11",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Kasım",
+      "kisa": "Kasım",
+      "donem": "Kasım sonu",
+      "gun": "ay-sonu:11",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-11.docx",
+      "tarih": "2026-10-29",
+      "iz": "36112efaafc6",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-12",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Aralık",
+      "kisa": "Aralık",
+      "donem": "Aralık sonu",
+      "gun": "ay-sonu:12",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-12.docx",
+      "tarih": "2026-10-29",
+      "iz": "cfe5770a2716",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-01",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Ocak",
+      "kisa": "Ocak",
+      "donem": "Ocak sonu",
+      "gun": "ay-sonu:01",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-01.docx",
+      "tarih": "2026-10-29",
+      "iz": "a3b160594849",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-02",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Şubat",
+      "kisa": "Şubat",
+      "donem": "Şubat sonu",
+      "gun": "ay-sonu:02",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-02.docx",
+      "tarih": "2026-10-29",
+      "iz": "7c49d4918b3d",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-03",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Mart",
+      "kisa": "Mart",
+      "donem": "Mart sonu",
+      "gun": "ay-sonu:03",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-03.docx",
+      "tarih": "2026-10-29",
+      "iz": "201ed4d68464",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-04",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Nisan",
+      "kisa": "Nisan",
+      "donem": "Nisan sonu",
+      "gun": "ay-sonu:04",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-04.docx",
+      "tarih": "2026-10-29",
+      "iz": "81cf398ebc0f",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-05",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Mayıs",
+      "kisa": "Mayıs",
+      "donem": "Mayıs sonu",
+      "gun": "ay-sonu:05",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-05.docx",
+      "tarih": "2026-10-29",
+      "iz": "4377f175b4df",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "kulup-aylik-06",
+      "kategori": "kulup",
+      "grup": "aylik",
+      "ad": "Kulüp aylık çalışma raporu — Haziran",
+      "kisa": "Haziran",
+      "donem": "Haziran sonu",
+      "gun": "ay-sonu:06",
+      "brans": null,
+      "dosya": "v3/kulup-aylik-06.docx",
+      "tarih": "2026-10-29",
+      "iz": "4233f5cbccf5",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "kulup",
+        "kulup_baskani",
+        "kulup_danisman",
+        "mudur",
+        "mudur_yrd",
+        "okul",
+        "tarih",
+        "uye_sayisi",
+        "uyeler"
+      ],
+      "ister": [
+        "kulup"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "veli-1-donem",
+      "gun": "10-09",
+      "kategori": "veli",
+      "ad": "Veli toplantısı tutanağı — 1. dönem",
+      "donem": "Birinci dönem",
+      "brans": null,
+      "dosya": "v3/veli-1-donem.docx",
+      "tarih": "2026-10-29",
+      "iz": "8f72d5d172df",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "ogrenci_sayisi",
+        "ogrenciler",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "veli-2-donem",
+      "gun": "02-19",
+      "kategori": "veli",
+      "ad": "Veli toplantısı tutanağı — 2. dönem",
+      "donem": "İkinci dönem",
+      "brans": null,
+      "dosya": "v3/veli-2-donem.docx",
+      "tarih": "2026-10-29",
+      "iz": "4fb6f7442da4",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "ogrenci_sayisi",
+        "ogrenciler",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "rehberlik-yillik-plan",
+      "gun": "10-02",
+      "kategori": "rehberlik",
+      "ad": "Sınıf rehberlik yıllık çalışma planı",
+      "donem": "Eğitim-öğretim yılı",
+      "brans": null,
+      "dosya": "v3/rehberlik-yillik-plan.docx",
+      "tarih": "2026-10-29",
+      "iz": "b714a6435c98",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "rehberlik-donem-raporu",
+      "kategori": "rehberlik",
+      "ad": "Sınıf rehberlik dönem raporu",
+      "donem": "Dönem sonu",
+      "gun": [
+        "@donem1_sonu",
+        "@ders_sonu"
+      ],
+      "brans": null,
+      "dosya": "v3/rehberlik-donem-raporu.docx",
+      "tarih": "2026-10-29",
+      "iz": "a274cb213d89",
+      "etiketler": [
+        "danisman",
+        "donem",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "sinif-ogrenci-listesi",
+      "kategori": "sinif",
+      "ad": "Sınıf öğrenci listesi",
+      "donem": "Dönem başı",
+      "gun": [
+        "09-18",
+        "02-12"
+      ],
+      "brans": null,
+      "dosya": "v3/sinif-ogrenci-listesi.docx",
+      "tarih": "2026-10-29",
+      "iz": "9edf2b2b23df",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "ogrenci_sayisi",
+        "ogrenciler",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "oturma-plani",
+      "kategori": "sinif",
+      "ad": "Sınıf oturma planı",
+      "donem": "Dönem başı",
+      "gun": [
+        "09-18",
+        "02-12"
+      ],
+      "brans": null,
+      "dosya": "v3/oturma-plani.docx",
+      "tarih": "2026-10-29",
+      "iz": "4717befd9a50",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "nobet-listesi",
+      "kategori": "sinif",
+      "ad": "Sınıf nöbet listesi",
+      "donem": "Her ay",
+      "gun": "ay-basi",
+      "brans": null,
+      "dosya": "v3/nobet-listesi.docx",
+      "tarih": "2026-10-29",
+      "iz": "acc5ea855f46",
+      "etiketler": [
+        "danisman",
+        "donem",
+        "egitim_yili",
+        "ilce",
+        "ogrenciler",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "veli-gorusme",
+      "kategori": "sinif",
+      "ad": "Veli görüşme tutanağı",
+      "donem": "Görüşme sonrası",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/veli-gorusme.docx",
+      "tarih": "2026-10-29",
+      "iz": "93e18c7eac2d",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "ev-ziyareti",
+      "kategori": "sinif",
+      "ad": "Ev ziyareti formu",
+      "donem": "Ziyaret sonrası",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/ev-ziyareti.docx",
+      "tarih": "2026-10-29",
+      "iz": "4bb8dcd75bfe",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "okul",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "ogrenci-tanima",
+      "kategori": "sinif",
+      "ad": "Öğrenci tanıma formu",
+      "donem": "Dönem başı",
+      "gun": "09-25",
+      "brans": null,
+      "dosya": "v3/ogrenci-tanima.docx",
+      "tarih": "2026-10-29",
+      "iz": "2d48e1eaae2f",
+      "etiketler": [
+        "egitim_yili",
+        "ilce",
+        "ogrenci_sayfalari",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "ders-kesim",
+      "kategori": "sinif",
+      "ad": "Ders kesim raporu",
+      "donem": "Yıl sonu",
+      "gun": "@ders_sonu-5",
+      "brans": null,
+      "dosya": "v3/ders-kesim.docx",
+      "tarih": "2026-10-29",
+      "iz": "fa72ae0ecd27",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "hafta_no",
+        "hafta_unite",
+        "haftalik_saat",
+        "ilce",
+        "mudur_yrd",
+        "ogretmen",
+        "okul",
+        "sinif",
+        "tarih"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "veli-izin",
+      "kategori": "sinif",
+      "ad": "Veli izin formu",
+      "donem": "Etkinlik / gezi öncesi",
+      "gun": null,
+      "brans": null,
+      "dosya": "v3/veli-izin.docx",
+      "tarih": "2026-10-29",
+      "iz": "6f4ab253e414",
+      "etiketler": [
+        "danisman",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "ogrenci_sayfalari",
+        "okul",
+        "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    }
+  ]
+}

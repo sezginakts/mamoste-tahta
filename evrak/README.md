@@ -1,5 +1,9 @@
 # Okul evrak şablonları
 
+> **Yeni düzen (v3):** uygulama `liste3.json` + `v3/` klasörünü okur. Bu ikisi ELLE DÜZENLENMEZ — ana (gizli) depoda
+> `node tools/evrak/yayinla.mjs` üretir ve denetler; kaynaklar ve etiket listesi: ana depoda `evrak-kaynak/README.md`.
+> Aşağıdaki `liste.json` + kökteki .docx dosyaları eski uygulama derlemeleri için DONDURULDU; değiştirme.
+
 Okul uygulamasındaki **Evraklar** bölümü bu klasörden okur. Uygulamayı yeniden derlemeye gerek yok:
 dosyayı buraya koyup `liste.json`'a satırını ekleyip gönderince (git push) öğretmenler birkaç dakika içinde görür.
 
