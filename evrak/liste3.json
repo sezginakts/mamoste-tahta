@@ -72,6 +72,48 @@
       "surum": 3
     },
     {
+      "id": "ilce-zumre-yil-basi",
+      "kategori": "zumre",
+      "ad": "İlçe zümre öğretmenler kurulu tutanağı — yıl başı",
+      "donem": "Eylül · okul zümrelerinden sonra (tarihi ilçe belirler)",
+      "gun": "09-10",
+      "brans": null,
+      "dosya": "v3/ilce-zumre-yil-basi.docx",
+      "tarih": "2026-10-29",
+      "iz": "4ff9627d4f5e",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "okul",
+        "tarih",
+        "zumre_baskani"
+      ],
+      "ister": [],
+      "surum": 3
+    },
+    {
+      "id": "ilce-zumre-yil-sonu",
+      "kategori": "zumre",
+      "ad": "İlçe zümre öğretmenler kurulu tutanağı — yıl sonu",
+      "donem": "Haziran · mesleki çalışma (ilçe toplarsa)",
+      "gun": "06-29",
+      "brans": null,
+      "dosya": "v3/ilce-zumre-yil-sonu.docx",
+      "tarih": "2026-10-29",
+      "iz": "5b6e17511589",
+      "etiketler": [
+        "brans",
+        "egitim_yili",
+        "ilce",
+        "okul",
+        "tarih",
+        "zumre_baskani"
+      ],
+      "ister": [],
+      "surum": 3
+    },
+    {
       "id": "sok-donem-basi",
       "gun": [
         "09-25",
@@ -129,7 +171,7 @@
     },
     {
       "id": "yillik-plan",
-      "kategori": "yillik-plan",
+      "kategori": "sok",
       "ad": "Yıllık plan",
       "donem": "Ders yılı başı · sınıf düzeyi seçilir",
       "gun": "@ders_basi",
@@ -956,7 +998,7 @@
     {
       "id": "veli-1-donem",
       "gun": "10-09",
-      "kategori": "veli",
+      "kategori": "sinif",
       "ad": "Veli toplantısı tutanağı — 1. dönem",
       "donem": "Birinci dönem",
       "brans": null,
@@ -982,7 +1024,7 @@
     {
       "id": "veli-2-donem",
       "gun": "02-19",
-      "kategori": "veli",
+      "kategori": "sinif",
       "ad": "Veli toplantısı tutanağı — 2. dönem",
       "donem": "İkinci dönem",
       "brans": null,
@@ -1008,7 +1050,7 @@
     {
       "id": "rehberlik-yillik-plan",
       "gun": "10-02",
-      "kategori": "rehberlik",
+      "kategori": "sinif",
       "ad": "Sınıf rehberlik yıllık çalışma planı",
       "donem": "Eğitim-öğretim yılı",
       "brans": null,
@@ -1020,34 +1062,6 @@
         "egitim_yili",
         "ilce",
         "mudur",
-        "okul",
-        "sinif",
-        "tarih"
-      ],
-      "ister": [
-        "sinif"
-      ],
-      "surum": 3
-    },
-    {
-      "id": "rehberlik-donem-raporu",
-      "kategori": "rehberlik",
-      "ad": "Sınıf rehberlik dönem raporu",
-      "donem": "Dönem sonu",
-      "gun": [
-        "@donem1_sonu",
-        "@ders_sonu"
-      ],
-      "brans": null,
-      "dosya": "v3/rehberlik-donem-raporu.docx",
-      "tarih": "2026-10-29",
-      "iz": "a274cb213d89",
-      "etiketler": [
-        "danisman",
-        "donem",
-        "egitim_yili",
-        "ilce",
-        "mudur_yrd",
         "okul",
         "sinif",
         "tarih"
@@ -1250,6 +1264,34 @@
         "ogrenci_sayfalari",
         "okul",
         "sinif"
+      ],
+      "ister": [
+        "sinif"
+      ],
+      "surum": 3
+    },
+    {
+      "id": "rehberlik-donem-raporu",
+      "kategori": "sinif",
+      "ad": "Sınıf rehberlik dönem raporu",
+      "donem": "Dönem sonu",
+      "gun": [
+        "@donem1_sonu",
+        "@ders_sonu"
+      ],
+      "brans": null,
+      "dosya": "v3/rehberlik-donem-raporu.docx",
+      "tarih": "2026-10-29",
+      "iz": "a274cb213d89",
+      "etiketler": [
+        "danisman",
+        "donem",
+        "egitim_yili",
+        "ilce",
+        "mudur_yrd",
+        "okul",
+        "sinif",
+        "tarih"
       ],
       "ister": [
         "sinif"
