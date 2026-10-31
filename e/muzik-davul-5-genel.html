@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Davul Ustası · 5. Sınıf</title>
+<style>
+:root{--mercan:#E2574C;--turkuaz:#0D9488;--gok:#0284C7;--kehribar:#D99A1E;--yazi:#0F172A;--soluk:#64748B;--zemin:#F1F5F9;
+  --f:clamp(16px,3vmin,42px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;color:var(--yazi);font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  background:linear-gradient(155deg,#FFE4E6 0%,#ECFEFF 45%,#F0FDFA 70%,#EEF2FF 100%);user-select:none;-webkit-user-select:none}
+button{font-family:inherit;cursor:pointer;border:0}
+#arka{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(6vmin);opacity:.3}
+.b1{width:45vmin;height:45vmin;background:var(--mercan);top:-12vmin;left:-10vmin}
+.b2{width:38vmin;height:38vmin;background:var(--gok);bottom:-14vmin;right:-8vmin;opacity:.22}
+.b3{width:30vmin;height:30vmin;background:var(--turkuaz);bottom:10vmin;left:-12vmin;opacity:.2}
+.ekran{display:none;position:absolute;inset:0}.ekran.aktif{display:flex}
+#giris{align-items:center;justify-content:center;padding:2vmin}
+.giris-kart{position:relative;background:rgba(255,255,255,.94);border-radius:4vmin;padding:3.2vmin 4.6vmin;max-width:min(94vw,118vmin);width:100%;
+  box-shadow:0 2vmin 6vmin rgba(226,87,76,.18);text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2vmin;max-height:96vh;overflow:auto}
+.logo{position:relative;display:flex;gap:1.2vmin;align-items:flex-end;justify-content:center;padding-top:3vmin}
+.logo i{display:block;width:6vmin;height:6vmin;border-radius:1.4vmin;background:var(--mercan)}
+.logo i:nth-of-type(2){background:var(--kehribar);height:7.4vmin}
+.logo i:nth-of-type(3){background:var(--gok);height:4.6vmin}
+.logo b{position:absolute;top:-2vmin;left:50%;margin-left:-3vmin;font-size:6vmin;animation:vur 1.1s ease-in-out infinite}
+@keyframes vur{0%,100%{transform:scale(1)}45%{transform:scale(1.18)}}
+.ust-yazi{font-weight:800;letter-spacing:.42em;color:var(--mercan);font-size:calc(var(--f)*.55)}
+h1{margin:0;font-size:calc(var(--f)*1.7);font-weight:900;line-height:1.05;background:linear-gradient(90deg,var(--mercan),var(--gok));-webkit-background-clip:text;background-clip:text;color:transparent}
+.alt{color:var(--soluk);font-size:calc(var(--f)*.58);font-weight:600}
+.imza{font-size:calc(var(--f)*.5);color:var(--turkuaz);background:#F0FDFA;border:1px solid #99F6E4;border-radius:99px;padding:.5em 1.2em}
+.ayarlar{display:grid;grid-template-columns:1fr 1fr;gap:1.1vmin 1.8vmin;width:100%}
+.ayar{display:flex;flex-direction:column;gap:.4vmin;text-align:left}
+.ayar>span{font-weight:800;font-size:calc(var(--f)*.44);color:var(--soluk);text-transform:uppercase;letter-spacing:.08em}
+.sec{display:flex;background:var(--zemin);border-radius:1.4vmin;padding:.45vmin;gap:.4vmin}
+.sec button{flex:1;background:transparent;border-radius:1vmin;padding:.9vmin .3vmin;font-weight:800;font-size:calc(var(--f)*.48);color:var(--soluk)}
+.sec button.on{background:#fff;color:var(--yazi);box-shadow:0 .3vmin 1vmin rgba(15,23,42,.12)}
+.buyuk{background:var(--mercan);color:#fff;font-weight:900;font-size:calc(var(--f)*.9);padding:1.5vmin 7vmin;border-radius:99px;box-shadow:0 .9vmin 0 #B4382E;transition:transform .1s}
+.buyuk:active{transform:translateY(.6vmin);box-shadow:0 .3vmin 0 #B4382E}
+.not{font-size:calc(var(--f)*.45);color:var(--soluk);line-height:1.5;max-width:82ch}
+.not b{color:var(--yazi)}
+#oyun{flex-direction:column}
+.bar{display:flex;align-items:center;gap:1.4vmin;padding:1.1vmin 2vmin;background:rgba(255,255,255,.9);box-shadow:0 .4vmin 2vmin rgba(15,23,42,.08);flex-wrap:wrap}
+.etiket{font-weight:900;font-size:calc(var(--f)*.58);color:var(--mercan)}
+.gorevBar{flex:1;font-size:calc(var(--f)*.5);font-weight:800;min-width:16ch}
+.tempoKutu{display:flex;align-items:center;gap:.8vmin;background:var(--zemin);border-radius:99px;padding:.3vmin .8vmin}
+.tempoKutu button{width:5vmin;height:5vmin;min-width:30px;min-height:30px;border-radius:50%;background:#fff;font-weight:900;font-size:calc(var(--f)*.8);color:var(--yazi);box-shadow:0 .2vmin .8vmin rgba(15,23,42,.12)}
+.tempoKutu span{font-weight:900;font-size:calc(var(--f)*.8);min-width:3ch;text-align:center}
+.tempoKutu small{font-size:calc(var(--f)*.36);color:var(--soluk);font-weight:800;letter-spacing:.1em}
+.seritKutu{display:flex;align-items:center;gap:.6vmin;background:var(--zemin);border-radius:99px;padding:.3vmin .8vmin}
+.seritKutu button{width:4.6vmin;height:4.6vmin;min-width:26px;min-height:26px;border-radius:50%;background:#fff;font-weight:900;font-size:calc(var(--f)*.6);color:var(--soluk);box-shadow:0 .2vmin .8vmin rgba(15,23,42,.12)}
+.seritKutu button.on{background:var(--gok);color:#fff}
+.seritKutu small{font-size:calc(var(--f)*.36);color:var(--soluk);font-weight:800;letter-spacing:.08em}
+.skorlar{display:flex;gap:1vmin}
+.skor{background:var(--zemin);border-radius:1.4vmin;padding:.45vmin 1.2vmin;font-weight:900;font-size:calc(var(--f)*.78);text-align:center;min-width:10vmin}
+.skor small{display:block;font-size:.42em;color:var(--soluk);font-weight:800;letter-spacing:.1em}
+.skor.sirada{outline:.5vmin solid currentColor}
+.araclar{display:flex;gap:.8vmin}
+.araclar button{background:var(--zemin);border-radius:1.2vmin;width:5.6vmin;height:5.6vmin;min-width:32px;min-height:32px;font-size:calc(var(--f)*.66)}
+.orta{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2vmin;padding:2vmin;min-height:0}
+.satir{display:flex;gap:1vmin;align-items:center;justify-content:center;width:min(94vw,120vmin)}
+.dilim{flex:1 1 0;min-width:0;height:min(10vmin,62px);border-radius:1.2vmin;background:#fff;border:.45vmin solid #E2E8F0;transition:background .08s,transform .08s,border-color .08s;touch-action:none}
+.dilim.tok{background:#FDBA74;border-color:#EA580C}
+.dilim.orta{background:#86EFAC;border-color:#16A34A}
+.dilim.tik{background:#93C5FD;border-color:#0284C7}
+.dilim.bekle{border-color:#93C5FD;background:#EFF6FF}
+.dilim.aktif{box-shadow:0 0 0 .6vmin #0F172A inset;transform:scale(1.12)}
+.dilim.iyi{background:#34D399;border-color:#059669;transform:scale(1.14)}
+.dilim.kotu{background:#F87171;border-color:#DC2626;transform:scale(1.14)}
+.sayaclar{display:flex;gap:2.4vmin;align-items:center;justify-content:center}
+.sayaclar div{font-weight:900;font-size:calc(var(--f)*1.15);text-align:center;min-width:12vmin}
+.sayaclar small{display:block;font-size:calc(var(--f)*.4);color:var(--soluk);font-weight:800;letter-spacing:.1em}
+.sayaclar .d{color:#059669}.sayaclar .y{color:#DC2626}
+.padler{display:flex;gap:2vmin;align-items:flex-end;justify-content:center}
+.pad{width:min(24vmin,30vw);height:min(24vmin,30vw);border-radius:50%;display:grid;place-items:center;font-size:calc(var(--f)*1.9);
+  box-shadow:0 1.4vmin 3vmin rgba(15,23,42,.18),inset 0 -1.2vmin 0 rgba(0,0,0,.12);transition:transform .06s;font-weight:900;color:#fff;
+  touch-action:none;-webkit-user-select:none;user-select:none}
+.pad small{font-size:calc(var(--f)*.4);letter-spacing:.1em}
+.pad.tok{background:radial-gradient(circle at 35% 30%,#FDBA74,#EA580C 60%,#9A3412)}
+.pad.orta{background:radial-gradient(circle at 35% 30%,#86EFAC,#22C55E 60%,#15803D)}
+.pad.tik{background:radial-gradient(circle at 35% 30%,#BAE6FD,#0284C7 60%,#075985)}
+.pad:active,.pad.vur{transform:scale(.94)}
+.durum{font-size:calc(var(--f)*.66);font-weight:900;text-align:center;min-height:1.4em}
+.durum small{display:block;font-size:.6em;color:var(--soluk);font-weight:700}
+.alt-bar{display:flex;gap:1.2vmin;padding:1.2vmin 2vmin 2vmin;justify-content:center;background:rgba(255,255,255,.78);flex-wrap:wrap}
+.alt-bar button{font-weight:900;font-size:calc(var(--f)*.62);padding:1.2vmin 3.4vmin;border-radius:99px;background:#fff;box-shadow:0 .4vmin 1.2vmin rgba(15,23,42,.1)}
+#durdurBtn{background:var(--mercan);color:#fff;box-shadow:0 .6vmin 0 #B4382E}
+#bitis{align-items:center;justify-content:center;padding:3vmin}
+.bitis-kart{background:rgba(255,255,255,.96);border-radius:4vmin;padding:3.4vmin 5vmin;box-shadow:0 2vmin 6vmin rgba(226,87,76,.18);display:flex;flex-direction:column;align-items:center;gap:1.3vmin;max-width:94vw;max-height:96vh;overflow:auto}
+.kupa{font-size:12vmin;line-height:1;animation:zip 1.2s ease-in-out infinite}
+@keyframes zip{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6vmin)}}
+.bitis-bas{font-size:calc(var(--f)*1.25);font-weight:900;text-align:center}
+.yildiz{font-size:7vmin;letter-spacing:1vmin}.yildiz b{color:#CBD5E1;font-weight:400}
+.bitis-skor{display:flex;gap:3vmin;flex-wrap:wrap;justify-content:center}
+.bitis-skor div{background:var(--zemin);border-radius:2vmin;padding:1.4vmin 3vmin;font-weight:900;font-size:calc(var(--f)*1.05);text-align:center}
+.bitis-skor small{display:block;font-size:.45em;color:var(--soluk)}
+.bitis-btn{display:flex;gap:1.4vmin;margin-top:.6vmin;flex-wrap:wrap;justify-content:center}
+.ikincil{background:var(--zemin);color:var(--yazi);font-weight:900;font-size:calc(var(--f)*.7);padding:1.1vmin 3.4vmin;border-radius:99px}
+#konfeti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:40}
+#konfeti i{position:absolute;top:-4vmin;width:1.4vmin;height:2.2vmin;border-radius:.3vmin;animation:dus linear forwards}
+@keyframes dus{to{transform:translateY(110vh) rotate(720deg)}}
+.ucan-puan{position:absolute;font-weight:900;font-size:calc(var(--f)*1.4);pointer-events:none;animation:yuksel 1s ease-out forwards;z-index:30}
+@keyframes yuksel{0%{opacity:0;transform:translate(-50%,0)}20%{opacity:1}100%{opacity:0;transform:translate(-50%,-8vmin)}}
+#onay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:50}
+#onay.acik{display:flex}
+.onay{background:#fff;border-radius:3vmin;padding:3vmin;text-align:center;display:flex;flex-direction:column;gap:2vmin;max-width:80vw}
+.onay p{margin:0;font-weight:800;font-size:calc(var(--f)*.8)}
+.onay .btnler{display:flex;gap:2vmin;justify-content:center}
+.onay button{padding:1.2vmin 3vmin;border-radius:99px;font-weight:900;font-size:calc(var(--f)*.7);background:var(--zemin)}
+.onay button.ana{background:var(--mercan);color:#fff}
+@media (orientation:portrait){:root{--f:clamp(14px,3.7vmin,26px)}.ayarlar{grid-template-columns:1fr}.dilim{width:7.6vmin;height:7.6vmin}}
+</style></head><body>
+<div id="arka"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+<section id="giris" class="ekran aktif">
+  <div class="giris-kart">
+    <div class="logo"><b>🥁</b><i></i><i></i><i></i></div>
+    <div class="ust-yazi">DAVUL USTASI</div>
+    <h1>Ritmi Yakala</h1>
+    <div class="alt">5. Sınıf Müzik · Ritim ve Vuruş</div>
+    
+    <div class="ayarlar">
+      <div class="ayar"><span>Oyuncu</span><div class="sec" data-k="mod"><button data-v="tek" class="on">👤 Tek</button><button data-v="takim">👥 İki takım</button></div></div>
+      <div class="ayar"><span>Süre</span><div class="sec" data-k="sure"><button data-v="45">45 sn</button><button data-v="60" class="on">60 sn</button><button data-v="90">90 sn</button><button data-v="0">Sınırsız</button></div></div>
+      <div class="ayar"><span>Mod</span><div class="sec" data-k="zor"><button data-v="0" class="on">Normal</button><button data-v="1">Zor (renkli)</button></div></div>
+      <div class="ayar"><span>Şerit uzunluğu</span><div class="sec" data-k="serit"><button data-v="1" class="on">1 ölçü</button><button data-v="2">2 ölçü</button><button data-v="3">3 ölçü</button></div></div>
+      <div class="ayar"><span>Vuruş (ölçü)</span><div class="sec" data-k="vurus"><button data-v="2/4" class="on">2 dörtlük</button><button data-v="3/4">3 dörtlük</button><button data-v="4/4">4 dörtlük</button><button data-v="4/2">4 ikilik</button><button data-v="6/8">6 sekizlik</button></div></div>
+      <div class="ayar"><span>Desen</span><div class="sec" data-k="desen" id="desenSec"></div></div>
+      <div class="ayar"><span>Tempo</span><div class="sec" data-k="tempo"><button data-v="0.8">Yavaş</button><button data-v="1" class="on">Normal</button><button data-v="1.25">Hızlı</button></div></div>
+    </div>
+    <button id="basla" class="buyuk">Başla ▶</button>
+    <div class="not">
+      Desen <b>döngü hâlinde</b> çalar; metronom her vuruşta klasik <b>ince tik</b> verir.
+      <b>Normal mod:</b> desenin vuruşları kalın tok davulla duyulur; vuruş anında herhangi bir davula vur → yeşil.
+      <b>Zor mod:</b> şeritteki kareler <b>renklidir</b> (🟠 TOK · 🟢 TUK · 🔵 TIK); kare hangi renkse <b>o davula</b> vurmalısın.
+      Yanlış davulun sesi de duyulur. Şerit uzunluğu 1/2/3 ölçü seçilebilir; süre bitene ya da durdurana kadar döngü sürer.
+      Ölçüler: <b>2 dörtlük · 3 dörtlük · 4 dörtlük · 4 ikilik · 6 sekizlik</b>.
+    </div>
+  </div>
+</section>
+
+<section id="oyun" class="ekran">
+  <header class="bar">
+    <div class="etiket">Davul Ustası</div>
+    <div class="gorevBar" id="gorevBar"></div>
+    <div class="tempoKutu"><button id="bpmEksi">−</button><span id="bpmYazi">80</span><small>BPM</small><button id="bpmArti">+</button></div>
+    <div class="seritKutu"><small>ŞERİT</small><button data-s="1">1</button><button data-s="2">2</button><button data-s="3">3</button><small>ölçü</small></div>
+    <div class="skorlar" id="skorlar"></div>
+    <div class="araclar"><button id="sesBtn" title="Ses">🔊</button><button id="tamBtn" title="Tam ekran">⛶</button><button id="cikBtn" title="Ana ekran">✕</button></div>
+  </header>
+  <div class="orta">
+    <div class="durum" id="durum">Döngü başlıyor…<small id="durumAlt">hazır ol</small></div>
+    <div class="satir" id="satir"></div>
+    <div class="sayaclar">
+      <div class="d"><span id="dogruSay">0</span><small>DOĞRU</small></div>
+      <div><span id="sureSay">60</span><small>SANİYE</small></div>
+      <div class="y"><span id="yanlisSay">0</span><small>YANLIŞ</small></div>
+    </div>
+    <div class="padler" id="padler">
+      <button class="pad tok" data-ses="tok">🥁<small>TOK</small></button>
+      <button class="pad orta" data-ses="orta">🪘<small>TUK</small></button>
+      <button class="pad tik" data-ses="tik">✨<small>TIK</small></button>
+    </div>
+  </div>
+  <div class="alt-bar">
+    <button id="durdurBtn">■ Durdur</button>
+    <button id="desenBtn">Desen değiştir</button>
+  </div>
+</section>
+
+<section id="bitis" class="ekran">
+  <div class="bitis-kart">
+    <div class="kupa">🏆</div>
+    <div class="bitis-bas" id="bitisBas">Bitti!</div>
+    <div class="yildiz" id="yildiz"></div>
+    <div class="bitis-skor" id="bitisSkor"></div>
+    <div class="bitis-btn">
+      <button class="buyuk" id="tekrarBtn">Tekrar ▶</button>
+      <button class="ikincil" id="ayarBtn">Ayarlar</button>
+    </div>
+  </div>
+</section>
+
+<div id="konfeti"></div>
+<div id="onay"><div class="onay"><p>Oyundan çıkılsın mı?</p><div class="btnler"><button id="hayirBtn">Hayır</button><button class="ana" id="evetBtn">Evet</button></div></div></div>
+
+<script>
+const HAVUZ={"desenler":[{"ad":"Dörtlük vuruşlar","bpm":80,"dizi":[1,0,1,0,1,0,1,0]},{"ad":"Vuruş + sekizlik","bpm":84,"dizi":[1,0,0,0,1,0,1,0]},{"ad":"Senkop","bpm":88,"dizi":[1,0,0,1,0,0,1,0]},{"ad":"Bateri kalıbı","bpm":92,"dizi":[1,0,1,1,0,1,0,1]},{"ad":"Usta","bpm":100,"dizi":[1,1,0,1,0,1,1,0]}]};
+const ANAHTAR='mamoste-davul:muzik-davul-5-genel';
+const $=id=>document.getElementById(id);
+const oku=(k,v)=>{try{const s=localStorage.getItem(k);return s?JSON.parse(s):v}catch(e){return v}};
+const yaz=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+
+const DESENLER=HAVUZ.desenler||[];
+const AYAR=Object.assign({mod:'tek',sure:'60',desen:'0',tempo:'1',vurus:'4/4',zor:'0',serit:'1'},oku(ANAHTAR+':ayar',{}));
+
+// Ölçü türleri: beat = vuruş birimi (dörtlük=1, ikilik=2, sekizlik=0.5), beats = ölçüdeki vuruş sayısı
+const VURUSLAR={
+  '2/4':{ad:'2 dörtlük',beat:1,beats:2},
+  '3/4':{ad:'3 dörtlük',beat:1,beats:3},
+  '4/4':{ad:'4 dörtlük',beat:1,beats:4},
+  '4/2':{ad:'4 ikilik',beat:2,beats:4},
+  '6/8':{ad:'6 sekizlik',beat:0.5,beats:6},
+};
+const olcu=()=>VURUSLAR[AYAR.vurus]||VURUSLAR['4/4'];
+const slotSay=()=>olcu().beats*2; // her vuruş iki dilim (sekizlik ızgara)
+
+// desen seçeneklerini doldur
+const dsec=$('desenSec');
+DESENLER.forEach((d,i)=>{const b=document.createElement('button');b.dataset.v=String(i);b.textContent=d.ad;b.style.fontSize='calc(var(--f)*.42)';dsec.appendChild(b)});
+document.querySelectorAll('.sec').forEach(sec=>{
+  const k=sec.dataset.k;const boya=()=>sec.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===AYAR[k]));
+  sec.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;AYAR[k]=b.dataset.v;yaz(ANAHTAR+':ayar',AYAR);boya();tik()});boya();
+});
+
+// ---- sesler: üç ayrı davul ----
+let actx=null,sessiz=oku(ANAHTAR+':sessiz',false),gurultu=null;
+function ac(){if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();return actx}
+function hazirlaGurultu(){if(gurultu)return gurultu;const c=ac();const n=c.sampleRate*0.25;const b=c.createBuffer(1,n,c.sampleRate);const d=b.getChannelData(0);
+  for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,2);gurultu=b;return gurultu}
+
+// TOK: kalın, derin (desenin kendisi bunu çalar)
+function sesTok(z){
+  if(sessiz)return;const c=ac();
+  const o=c.createOscillator(),g=c.createGain();
+  o.type='sine';o.frequency.setValueAtTime(170,z);o.frequency.exponentialRampToValueAtTime(46,z+.22);
+  g.gain.setValueAtTime(1,z);g.gain.exponentialRampToValueAtTime(.001,z+.34);
+  o.connect(g);g.connect(c.destination);o.start(z);o.stop(z+.36);
+  const o2=c.createOscillator(),g2=c.createGain();o2.type='triangle';o2.frequency.setValueAtTime(90,z);
+  g2.gain.setValueAtTime(.25,z);g2.gain.exponentialRampToValueAtTime(.001,z+.16);
+  o2.connect(g2);g2.connect(c.destination);o2.start(z);o2.stop(z+.18);
+}
+// ORTA: tom benzeri
+function sesOrta(z){
+  if(sessiz)return;const c=ac();
+  const o=c.createOscillator(),g=c.createGain();
+  o.type='triangle';o.frequency.setValueAtTime(320,z);o.frequency.exponentialRampToValueAtTime(150,z+.12);
+  g.gain.setValueAtTime(.7,z);g.gain.exponentialRampToValueAtTime(.001,z+.2);
+  o.connect(g);g.connect(c.destination);o.start(z);o.stop(z+.22);
+}
+// TIK: ince, kısa (hi-hat benzeri)
+function sesTik(z){
+  if(sessiz)return;const c=ac();
+  const s=c.createBufferSource();s.buffer=hazirlaGurultu();
+  const f=c.createBiquadFilter();f.type='highpass';f.frequency.value=2600;
+  const g=c.createGain();g.gain.setValueAtTime(.5,z);g.gain.exponentialRampToValueAtTime(.001,z+.07);
+  s.connect(f);f.connect(g);g.connect(c.destination);s.start(z);s.stop(z+.09);
+}
+function calSes(tip,z){if(tip==='tok')sesTok(z);else if(tip==='orta')sesOrta(z);else sesTik(z)}
+// METRONOM: klasik ince tik sesi (kısa ve tiz); ölçünün ilk vuruşu biraz vurgulu
+function metronom(z,vurgu){
+  if(sessiz)return;const c=ac();
+  const o=c.createOscillator(),g=c.createGain();
+  o.type='square';o.frequency.value=vurgu?1900:1500;
+  g.gain.setValueAtTime(vurgu?.16:.085,z);
+  g.gain.exponentialRampToValueAtTime(.0005,z+.055);
+  o.connect(g);g.connect(c.destination);o.start(z);o.stop(z+.06);
+}
+function tik(){if(sessiz)return;try{const c=ac();const o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=520;g.gain.value=.05;
+  o.connect(g);g.connect(c.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.06);o.stop(c.currentTime+.06);}catch(e){}}
+const dogruSes=()=>{sesOrta(ac().currentTime);setTimeout(()=>sesTik(ac().currentTime+.02),10)};
+const finalSes=()=>{[523,659,784,1046].forEach((f,i)=>setTimeout(()=>{const c=ac();const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=f;g.gain.value=.06;o.connect(g);g.connect(c.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.18);o.stop(c.currentTime+.2)},i*110))};
+
+// ---- durum ----
+let puan=[0,0],sira=0,dogru=0,yanlis=0,caliyor=false;
+let slotSure=0.375,barSure=3,loopBas=0,rafId=0,sureTimer=0,kalanSure=60,bitisZ=0,donguId=0;
+
+// Ekran üstünden tempo: − / + (0,4x – 2x)
+function bpmYaz(){
+  const d=desen();const bpm=Math.round(d.bpm*(+AYAR.tempo));
+  if($('bpmYazi'))$('bpmYazi').textContent=bpm;
+}
+function tempoDegistir(delta){
+  const yeni=Math.min(2,Math.max(0.4,Math.round(((+AYAR.tempo)+delta)*100)/100));
+  if(yeni===(+AYAR.tempo))return;
+  AYAR.tempo=String(yeni);yaz(ANAHTAR+':ayar',AYAR);
+  document.querySelectorAll('.sec[data-k="tempo"] button').forEach(b=>b.classList.remove('on'));
+  if(caliyor){
+    const kalan=(bitisZ>0)?Math.max(0,bitisZ-ac().currentTime):0;
+    donguBaslat(kalan);
+  }else bpmYaz();
+  tik();
+}
+
+// Şerit uzunluğu: üst bardaki 1 / 2 / 3 (ölçü)
+function seritYaz(){
+  document.querySelectorAll('.seritKutu button').forEach(b=>b.classList.toggle('on',b.dataset.s===String(+AYAR.serit)));
+  document.querySelectorAll('.sec[data-k="serit"] button').forEach(b=>b.classList.toggle('on',b.dataset.v===String(+AYAR.serit)));
+}
+function seritDegistir(v){
+  const yeni=String(Math.min(3,Math.max(1,+v)));
+  if(yeni===String(+AYAR.serit))return;
+  AYAR.serit=yeni;yaz(ANAHTAR+':ayar',AYAR);
+  seritKur();satirCiz();seritYaz();
+  if(caliyor){
+    const kalan=(bitisZ>0)?Math.max(0,bitisZ-ac().currentTime):0;
+    donguBaslat(kalan);
+  }
+  tik();
+}
+const TAKIM=[{ad:'Takım A',renk:'#E2574C'},{ad:'Takım B',renk:'#0284C7'}];
+
+function desen(){return DESENLER[+AYAR.desen]||DESENLER[0]||{ad:'—',bpm:80,dizi:[1,0,1,0,1,0,1,0]}}
+
+function ekran(id){document.querySelectorAll('.ekran').forEach(s=>s.classList.toggle('aktif',s.id===id))}
+function skorCiz(){
+  const el=$('skorlar');el.innerHTML='';
+  if(AYAR.mod==='takim'){
+    TAKIM.forEach((t,i)=>{const d=document.createElement('div');d.className='skor'+(i===sira?' sirada':'');d.style.color=t.renk;
+      d.innerHTML=`<small>${t.ad.toLocaleUpperCase('tr')}</small>${puan[i]}`;el.appendChild(d)});
+  }else{
+    const d=document.createElement('div');d.className='skor';d.innerHTML=`<small>PUAN</small>${puan[0]}`;el.appendChild(d);
+  }
+}
+function satirCiz(){
+  const el=$('satir');el.innerHTML='';
+  const n=slotSay()*(+AYAR.serit||1);
+  for(let i=0;i<n;i++){
+    const k=document.createElement('div');
+    const tip=serit[i];
+    k.className='dilim'+(tip?' '+tip:'');
+    k.id='dilim'+i;
+    el.appendChild(k);
+  }
+}
+
+// Zor mod şeridi: vuruş yerlerine renkler (en az 2 vuruş aynı renk)
+const RENK_TIP=['tok','orta','tik'];
+const RENK_AD={tok:'TOK (turuncu)',orta:'TUK (yeşil)',tik:'TIK (mavi)'};
+function seritKur(){
+  const n=slotSay()*(+AYAR.serit||1);
+  const d=desen();
+  serit=new Array(n).fill(null);
+  if(AYAR.zor!=='1')return;
+  let kalanBlok=0,renkIdx=0;
+  for(let i=0;i<n;i++){
+    if(!d.dizi[i%d.dizi.length])continue;
+    if(kalanBlok<=0){
+      if(i>0)renkIdx++;                       // renk değişimi (blok bittiğinde)
+      kalanBlok=2+Math.floor(Math.random()*2); // 2-3 vuruş aynı renk
+    }
+    serit[i]=RENK_TIP[renkIdx%3];
+    kalanBlok--;
+  }
+}
+function sayacCiz(){$('dogruSay').textContent=dogru;$('yanlisSay').textContent=yanlis;$('sureSay').textContent=Math.max(0,Math.ceil(kalanSure))}
+
+function basla(){
+  puan=[0,0];sira=0;dogru=0;yanlis=0;kalanSure=+AYAR.sure||0;
+  seritKur();satirCiz();skorCiz();sayacCiz();
+  ekran('oyun');
+  donguBaslat(kalanSure);
+}
+
+// Döngüyü (yeniden) kur: tempoyu/ölçüyü değiştirdiğimizde de bunu çağırır
+function donguBaslat(sureSan){
+  const d=desen();const o=olcu();
+  const carpan=d.bpm*(+AYAR.tempo);
+  slotSure=(60/carpan)*o.beat/2;barSure=slotSure*slotSay();
+  donguId++;
+  caliyor=true;
+  bpmYaz();
+  $('gorevBar').textContent=`${d.ad} · ${o.ad} · ${Math.round(carpan)} BPM · ${AYAR.zor==='1'?'ZOR':'NORMAL'}`;
+  $('durum').innerHTML=AYAR.zor==='1'
+    ? `${d.ad}<small>renkli kare = o renk davula vur</small>`
+    : `${d.ad}<small>mavi kareler vuruş · döngü sürüyor</small>`;
+  $('durdurBtn').textContent='■ Durdur';
+  const c=ac();
+  loopBas=c.currentTime+0.5;
+  calBar(loopBas,donguId);
+  cancelAnimationFrame(rafId);gorselDongu();
+  clearInterval(sureTimer);
+  if(sureSan>0){
+    bitisZ=c.currentTime+sureSan;
+    sureTimer=setInterval(()=>{
+      kalanSure=Math.max(0,bitisZ-ac().currentTime);
+      sayacCiz();
+      if(kalanSure<=0){clearInterval(sureTimer);durdur(true)}
+    },200);
+  }else{kalanSure=0;bitisZ=0;sayacCiz()}
+}
+
+function calBar(t){
+  if(!caliyor)return;
+  const d=desen();const n=slotSay();
+  for(let i=0;i<n;i++){
+    // metronom: HER modda sadece ince tik (ilk vuruş hafif vurgulu)
+    if(i%2===0)metronom(t+i*slotSure,i===0);
+    // NORMAL modda desenin vuruşları kendiliğinden çalar; ZOR modda çalmaz (öğrenci çalar)
+    if(AYAR.zor!=='1'&&d.dizi[i%d.dizi.length])sesTok(t+i*slotSure);
+  }
+  const sonraki=t+barSure;
+  const kimlik=donguId;
+  setTimeout(()=>{
+    if(!caliyor||kimlik!==donguId)return;
+    if(AYAR.mod==='takim'){sira=1-sira;skorCiz()}
+    calBar(sonraki);
+  },Math.max(0,(sonraki-ac().currentTime)*1000));
+}
+
+function gorselDongu(){
+  if(!caliyor)return;
+  const bars=+AYAR.serit||1;
+  const toplam=slotSay()*bars;
+  const seritSure=barSure*bars;
+  const gecen=ac().currentTime-loopBas;
+  const ic=((gecen%seritSure)+seritSure)%seritSure;
+  const idx=Math.floor(ic/slotSure);
+  const yeni=ic-idx*slotSure;
+  // Kare tam vuruş anında parlar (ses ile aynı an)
+  for(let i=0;i<toplam;i++){const el=$('dilim'+i);if(!el)continue;el.classList.toggle('aktif',i===idx&&yeni<0.13)}
+  rafId=requestAnimationFrame(gorselDongu);
+}
+
+// Vuruş toleransı: ±150 ms, ama hızlı tempoda dilimin %40'ını geçmesin
+const tolerans=()=>Math.min(0.15, slotSure*0.4);
+
+// t anında basıldığında: doğru mu, hangi dilim, ses hangi ana kurulur?
+// Ses HER ZAMAN vuruşun tam anına oturur (erken basıldıysa o anı bekler).
+function vurusHesapla(t){
+  const toplamSlot=slotSay()*(+AYAR.serit||1);
+  const seritSure=barSure*(+AYAR.serit||1);
+  const gecen=((t-loopBas)%seritSure+seritSure)%seritSure;
+  const k=gecen/slotSure;
+  const ni=Math.round(k);                 // en yakın vuruş dilimi
+  const fark=gecen-ni*slotSure;           // <0 erken, >0 geç
+  const idx=((ni%toplamSlot)+toplamSlot)%toplamSlot;
+  let beklenen=null;
+  if(AYAR.zor==='1'){beklenen=serit[idx]||null}
+  else{const d=desen();beklenen=d.dizi[idx%d.dizi.length]?'tok':null}
+  const varMi=!!beklenen;
+  const dogruMu=Math.abs(fark)<=tolerans()&&varMi;
+  const vurusAbs=(t-gecen)+ni*slotSure;   // vuruşun mutlak ses zamanı
+  const calZ=(dogruMu&&vurusAbs>t)?vurusAbs:t;
+  return {dogruMu,idx,fark,vurusAbs,calZ,beklenen};
+}
+
+function padVur(tip){
+  const btn=document.querySelector(`.pad.${tip}`);
+  if(btn){btn.classList.add('vur');setTimeout(()=>btn.classList.remove('vur'),120)}
+  const c=ac();const t=c.currentTime;
+  if(!caliyor){calSes(tip,t);return}
+  const h=vurusHesapla(t);
+  // Renk kontrolü: ZOR modda karenin rengiyle aynı davula vurulmalı
+  const renkDogru=AYAR.zor==='1'?(h.beklenen===tip):true;
+  const dogruMu=h.dogruMu&&renkDogru;
+  // Yanlış davulun sesi de duyulsun (öğrenci hatasını duysun)
+  calSes(tip,(dogruMu&&h.calZ>t)?h.calZ:t);
+  const el=$('dilim'+h.idx);
+  if(dogruMu){
+    dogru++;
+    const kazan=10;
+    puan[AYAR.mod==='takim'?sira:0]+=kazan;
+    if(el){el.classList.remove('aktif','kotu');el.classList.add('iyi');setTimeout(()=>el.classList.remove('iyi'),260)}
+    ucanPuan('+'+kazan,'#059669');dogruSes();
+  }else{
+    yanlis++;
+    puan[AYAR.mod==='takim'?sira:0]-=3;
+    if(el){el.classList.remove('aktif','iyi');el.classList.add('kotu');setTimeout(()=>el.classList.remove('kotu'),260)}
+    // yanlış renk ise doğru rengi söyle
+    const uyari=(AYAR.zor==='1'&&h.beklenen&&h.beklenen!==tip)?`doğrusu: ${RENK_AD[h.beklenen]}`:'kaçırdın';
+    ucanPuan('−3','#DC2626',uyari);
+  }
+  skorCiz();sayacCiz();
+}
+
+function ucanPuan(txt,renk,alt){
+  const p=document.createElement('div');p.className='ucan-puan';
+  p.appendChild(document.createTextNode(txt));
+  if(alt){const s=document.createElement('small');s.textContent=alt;s.style.display='block';s.style.fontSize='.42em';s.style.fontWeight='800';p.appendChild(s)}
+  p.style.color=renk;
+  const r=$('satir').getBoundingClientRect();
+  p.style.left=(r.left+r.width/2)+'px';p.style.top=(r.top-10)+'px';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),1000);
+}
+
+function durdur(sureBitti){
+  if(!caliyor)return;
+  caliyor=false;cancelAnimationFrame(rafId);clearInterval(sureTimer);
+  setTimeout(bitis,sureBitti?300:200);
+}
+
+function bitis(){
+  ekran('bitis');finalSes();konfeti(120);
+  const toplam=dogru+yanlis;
+  const oran=toplam?dogru/toplam:0;
+  if(AYAR.mod==='takim'){
+    $('bitisBas').textContent=puan[0]===puan[1]?'Berabere! 🤝':`${puan[0]>puan[1]?'Takım A':'Takım B'} kazandı!`;
+    $('yildiz').innerHTML='';
+    $('bitisSkor').innerHTML=`<div style="color:#E2574C">${puan[0]}<small>Takım A</small></div><div style="color:#0284C7">${puan[1]}<small>Takım B</small></div><div>${dogru}/${toplam}<small>doğru vuruş</small></div>`;
+  }else{
+    const yil=oran>=.85&&dogru>=10?3:oran>=.65?2:oran>=.35?1:0;
+    $('bitisBas').textContent=['Döngüyü bir daha dene!','İyi gidiyorsun!','Ritim sağlam!','Davul ustası! 🥁'][yil];
+    $('yildiz').innerHTML='⭐'.repeat(yil)+'<b>☆</b>'.repeat(3-yil);
+    $('bitisSkor').innerHTML=`<div>${puan[0]}<small>puan</small></div><div>${dogru}<small>doğru</small></div><div>${yanlis}<small>yanlış</small></div>`;
+  }
+  $('tablo')&&null;
+}
+function konfeti(n){const k=$('konfeti');const r=['#E2574C','#0D9488','#0284C7','#D99A1E','#FDE68A'];
+  for(let i=0;i<(n||60);i++){const c=document.createElement('i');c.style.left=Math.random()*100+'vw';c.style.background=r[i%r.length];
+    c.style.animationDuration=(1.4+Math.random()*1.6)+'s';c.style.animationDelay=(Math.random()*.4)+'s';c.style.transform=`rotate(${Math.random()*360}deg)`;k.appendChild(c);setTimeout(()=>c.remove(),3600)}}
+
+document.querySelectorAll('.pad').forEach(p=>p.addEventListener('pointerdown',e=>{e.preventDefault();padVur(p.dataset.ses)}));
+$('basla').onclick=basla;
+$('bpmEksi').onclick=()=>tempoDegistir(-0.05);
+$('bpmArti').onclick=()=>tempoDegistir(0.05);
+document.querySelectorAll('.seritKutu button').forEach(b=>b.onclick=()=>seritDegistir(b.dataset.s));
+seritYaz();
+$('tekrarBtn').onclick=basla;
+$('ayarBtn').onclick=()=>ekran('giris');
+$('durdurBtn').onclick=()=>durdur(false);
+$('desenBtn').onclick=()=>{
+  const n=DESENLER.length||1;
+  AYAR.desen=String(((+AYAR.desen)+1)%n);yaz(ANAHTAR+':ayar',AYAR);
+  document.querySelectorAll('#desenSec button').forEach(b=>b.classList.toggle('on',b.dataset.v===AYAR.desen));
+  caliyor=false;cancelAnimationFrame(rafId);clearInterval(sureTimer);
+  setTimeout(basla,150);
+};
+$('cikBtn').onclick=()=>{durdur(false);setTimeout(()=>$('onay').classList.add('acik'),250)};
+$('hayirBtn').onclick=()=>$('onay').classList.remove('acik');
+$('evetBtn').onclick=()=>{$('onay').classList.remove('acik');ekran('giris')};
+function sesCiz(){$('sesBtn').textContent=sessiz?'🔇':'🔊'}sesCiz();
+$('sesBtn').onclick=()=>{sessiz=!sessiz;yaz(ANAHTAR+':sessiz',sessiz);sesCiz()};
+if(!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen))$('tamBtn').style.display='none';
+$('tamBtn').onclick=()=>{const d=document.documentElement;if(document.fullscreenElement||document.webkitFullscreenElement){(document.exitFullscreen||document.webkitExitFullscreen).call(d)}else{(d.requestFullscreen||d.webkitRequestFullscreen).call(d)}};
+document.addEventListener('keydown',e=>{
+  if(!$('oyun').classList.contains('aktif'))return;
+  if(e.code==='Space'){e.preventDefault();padVur('tok')}
+  if(e.key==='1')padVur('tok');
+  if(e.key==='2')padVur('orta');
+  if(e.key==='3')padVur('tik');
+  if(e.key==='Escape')durdur(false);
+});
+</script>
+</body></html>

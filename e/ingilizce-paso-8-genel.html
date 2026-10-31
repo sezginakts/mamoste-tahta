@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Pasaparola · 8. Sınıf</title>
+<style>
+:root{--mercan:#E2574C;--turkuaz:#0D9488;--gok:#0284C7;--kehribar:#D99A1E;--yazi:#0F172A;--soluk:#64748B;--cizgi:#E2E8F0;--kart:#FFFFFF;--zemin:#F1F5F9;
+  --f:clamp(16px,3vmin,42px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;color:var(--yazi);font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  background:linear-gradient(155deg,#FFF7ED 0%,#FEF3E2 30%,#ECFEFF 65%,#E0F2FE 100%);user-select:none;-webkit-user-select:none}
+button{font-family:inherit;cursor:pointer;border:0}
+#arka{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(6vmin);opacity:.35}
+.b1{width:45vmin;height:45vmin;background:var(--kehribar);top:-12vmin;left:-10vmin;opacity:.28}
+.b2{width:38vmin;height:38vmin;background:var(--mercan);bottom:-14vmin;right:-8vmin;opacity:.22}
+.b3{width:30vmin;height:30vmin;background:var(--turkuaz);bottom:10vmin;left:-12vmin;opacity:.22}
+.b4{width:24vmin;height:24vmin;background:var(--gok);top:6vmin;right:10vmin;opacity:.2}
+.ekran{display:none;position:absolute;inset:0}.ekran.aktif{display:flex}
+/* ---------- Giriş ---------- */
+#giris{align-items:center;justify-content:center;padding:2vmin}
+.ucan{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.ucan span{position:absolute;font-weight:900;font-size:calc(var(--f)*.9);width:2.1em;height:2.1em;display:grid;place-items:center;border-radius:50%;background:#fff;border:2px solid;border-bottom-width:.3em;opacity:.55;animation:suz 14s ease-in-out infinite}
+@keyframes suz{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-3vmin) rotate(calc(var(--r)*-1))}}
+.giris-kart{position:relative;background:rgba(255,255,255,.93);border-radius:4vmin;padding:3.5vmin 5vmin;max-width:min(94vw,124vmin);width:100%;
+  box-shadow:0 2vmin 6vmin rgba(217,154,30,.2);text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.6vmin;max-height:96vh;overflow:auto}
+.logo{display:flex;gap:1vmin;justify-content:center}
+.logo i{display:grid;place-items:center;width:7vmin;height:7vmin;border-radius:50%;font-style:normal;font-weight:900;color:#fff;font-size:3.8vmin;box-shadow:0 .7vmin 0 rgba(0,0,0,.18)}
+.logo i:nth-child(1){background:var(--kehribar);transform:rotate(-8deg)}.logo i:nth-child(2){background:var(--gok);transform:translateY(-1vmin)}
+.logo i:nth-child(3){background:var(--mercan);transform:rotate(7deg)}.logo i:nth-child(4){background:var(--turkuaz);transform:translateY(.6vmin) rotate(-4deg)}
+.ust-yazi{font-weight:800;letter-spacing:.5em;color:var(--kehribar);font-size:calc(var(--f)*.55)}
+h1{margin:0;font-size:calc(var(--f)*2.1);font-weight:900;line-height:1;background:linear-gradient(90deg,var(--mercan),var(--kehribar));-webkit-background-clip:text;background-clip:text;color:transparent}
+.alt{color:var(--soluk);font-size:calc(var(--f)*.6);font-weight:600}
+.imza{font-size:calc(var(--f)*.5);color:var(--turkuaz);background:#F0FDFA;border:1px solid #99F6E4;border-radius:99px;padding:.5em 1.2em}
+.ayarlar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4vmin 2.4vmin;width:100%;margin-top:.6vmin}
+.ayar{display:flex;flex-direction:column;gap:.7vmin;text-align:left}
+.ayar>span{font-weight:800;font-size:calc(var(--f)*.5);color:var(--soluk);text-transform:uppercase;letter-spacing:.08em}
+.sec{display:flex;background:var(--zemin);border-radius:1.6vmin;padding:.5vmin;gap:.5vmin;flex-wrap:wrap}
+.sec button{flex:1;background:transparent;border-radius:1.2vmin;padding:1.1vmin .8vmin;font-weight:800;font-size:calc(var(--f)*.55);color:var(--soluk);white-space:nowrap}
+.sec button.on{background:#fff;color:var(--yazi);box-shadow:0 .3vmin 1vmin rgba(15,23,42,.12)}
+.buyuk{margin-top:.6vmin;background:var(--mercan);color:#fff;font-weight:900;font-size:calc(var(--f)*.95);padding:1.6vmin 7vmin;border-radius:99px;box-shadow:0 .9vmin 0 #B4382E;transition:transform .1s}
+.buyuk:active{transform:translateY(.6vmin);box-shadow:0 .3vmin 0 #B4382E}
+.nasil{font-size:calc(var(--f)*.5);color:var(--soluk);line-height:1.5;max-width:100vmin}
+/* ---------- Oyun ---------- */
+#oyun{flex-direction:column;--tr:var(--gok)}
+.bar{display:flex;align-items:center;gap:1.5vmin;padding:1.6vmin 2.4vmin .8vmin}
+.etiket{font-weight:900;font-size:calc(var(--f)*.55);color:var(--mercan);background:#fff;border-radius:99px;padding:.7vmin 1.6vmin;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
+.skorlar{flex:1;display:flex;gap:1vmin;justify-content:center}
+.skor{background:#fff;border-radius:1.6vmin;padding:.6vmin 1.6vmin;font-weight:900;font-size:calc(var(--f)*.65);display:flex;align-items:center;gap:1vmin;border:.35vmin solid transparent;transition:all .25s;white-space:nowrap}
+.skor small{font-size:.62em;color:var(--soluk);font-weight:800}
+.skor .zm{font-variant-numeric:tabular-nums}
+.skor.m{color:var(--mercan)}.skor.t{color:var(--turkuaz)}.skor.g{color:var(--gok)}
+.skor.sirada{border-color:currentColor;transform:scale(1.08);box-shadow:0 .6vmin 1.6vmin rgba(15,23,42,.12)}
+.skor.bitti{opacity:.55}
+.araclar{display:flex;gap:.8vmin}
+.araclar button{width:6vmin;height:6vmin;min-width:36px;min-height:36px;border-radius:50%;background:#fff;font-size:calc(var(--f)*.6);box-shadow:0 .3vmin 1vmin rgba(15,23,42,.08)}
+.sahne{flex:1;display:flex;align-items:center;justify-content:center;gap:4vmin;padding:1vmin 3vmin 2.4vmin;min-height:0}
+/* Harf çemberi */
+.rosco{position:relative;flex:none;width:min(78vh,50vw);height:min(78vh,50vw)}
+.rosco .h{position:absolute;width:var(--dk,5vmin);height:var(--dk,5vmin);margin:calc(var(--dk,5vmin)/-2) 0 0 calc(var(--dk,5vmin)/-2);border-radius:50%;
+  display:grid;place-items:center;font-weight:900;font-size:calc(var(--dk,5vmin)*.52);color:#fff;line-height:1;
+  background:radial-gradient(circle at 35% 30%,#38BDF8,#0284C7 70%);box-shadow:inset 0 -.35vmin 0 rgba(0,0,0,.2),0 .3vmin .8vmin rgba(15,23,42,.15);transition:transform .25s,background .3s}
+.rosco .h.pas{background:radial-gradient(circle at 35% 30%,#FCD34D,#D99A1E 70%)}
+.rosco .h.dogru{background:radial-gradient(circle at 35% 30%,#2DD4BF,#0D9488 70%)}
+.rosco .h.yanlis{background:radial-gradient(circle at 35% 30%,#FB7185,#E2574C 70%)}
+.rosco .h.simdi{background:#fff;color:var(--gok);transform:scale(1.3);z-index:2;box-shadow:0 0 0 .5vmin var(--gok),0 .8vmin 2vmin rgba(2,132,199,.35);animation:isik 1.2s ease-in-out infinite}
+.rosco .h.simdi.pas{color:#A8760F;box-shadow:0 0 0 .5vmin var(--kehribar),0 .8vmin 2vmin rgba(217,154,30,.35)}
+@keyframes isik{0%,100%{transform:scale(1.25)}50%{transform:scale(1.38)}}
+.merkez{position:absolute;inset:15%;border-radius:50%;background:radial-gradient(circle at 50% 32%,#fff 0%,#F8FAFC 62%,#E0F2FE 100%);
+  box-shadow:inset 0 0 0 .7vmin #fff,0 1vmin 3vmin rgba(2,132,199,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25em;text-align:center}
+.m-takim{font-weight:900;font-size:calc(var(--rs,60vmin)*.04);color:var(--tr);letter-spacing:.06em;text-transform:uppercase;min-height:1.2em}
+.m-sure{font-weight:900;font-size:calc(var(--rs,60vmin)*.17);line-height:1;font-variant-numeric:tabular-nums;color:var(--yazi)}
+.m-sure.az{color:var(--mercan);animation:nabiz 1s ease-in-out infinite}
+.m-skor{display:flex;gap:.7em;font-weight:900;font-size:calc(var(--rs,60vmin)*.05)}
+.m-skor .d{color:#0F766E}.m-skor .y{color:#B4382E}.m-skor .p{color:#A8760F}
+.m-tur{font-weight:800;font-size:calc(var(--rs,60vmin)*.038);color:var(--soluk);letter-spacing:.1em;min-height:1.2em}
+@keyframes nabiz{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+/* Soru paneli */
+.panel{flex:1;min-width:0;max-width:96vmin;display:flex;flex-direction:column;gap:2vmin;max-height:100%;overflow-y:auto;padding:1vmin .4vmin}
+.soru{background:rgba(255,255,255,.95);border-radius:3vmin;padding:2.6vmin 3.2vmin;box-shadow:0 1vmin 3vmin rgba(217,154,30,.15);border-top:1vmin solid var(--tr);display:flex;flex-direction:column;gap:1.8vmin}
+.kural{display:flex;align-items:center;gap:2vmin}
+.kural b{width:10vmin;height:10vmin;min-width:44px;min-height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#38BDF8,#0284C7 70%);color:#fff;display:grid;place-items:center;font-size:calc(var(--f)*1.5);font-weight:900;flex:none;box-shadow:inset 0 -.5vmin 0 rgba(0,0,0,.2)}
+.kural b.pas{background:radial-gradient(circle at 35% 30%,#FCD34D,#D99A1E 70%)}
+.kural span{font-weight:900;font-size:calc(var(--f)*.72);color:var(--gok);letter-spacing:.05em}
+.kural small{display:block;font-size:.72em;color:var(--kehribar);letter-spacing:.04em}
+.ipucu{font-weight:800;font-size:calc(var(--f)*1.05);line-height:1.32;min-height:2.6em}
+.secenekler{display:grid;grid-template-columns:1fr 1fr;gap:1.4vmin}
+.sk{background:#fff;border:.3vmin solid var(--cizgi);border-bottom-width:.9vmin;border-radius:2vmin;padding:1.5vmin 1.4vmin;font-weight:900;font-size:calc(var(--f)*.78);color:var(--yazi);transition:transform .1s,background .2s,opacity .2s;overflow-wrap:anywhere}
+.sk:active{transform:translateY(.4vmin)}
+.sk i{font-style:normal;color:#94A3B8;font-size:.7em;margin-right:.5em}
+.sk.dogru{background:var(--turkuaz);border-color:#0F766E;color:#fff}
+.sk.yanlis{background:var(--mercan);border-color:#B4382E;color:#fff;animation:salla .45s}
+.sk.dogru i,.sk.yanlis i{color:#fff}
+.sk.soluk{opacity:.38}
+.secenekler.kilit .sk{pointer-events:none}
+@keyframes salla{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-1.2vmin)}40%,80%{transform:translateX(1.2vmin)}}
+.sozlu{display:flex;flex-direction:column;gap:1.4vmin}
+.cevap{display:flex;align-items:center;justify-content:center;min-height:2.3em;border-radius:2vmin;background:var(--zemin);font-weight:900;font-size:calc(var(--f)*.95);color:#94A3B8;letter-spacing:.2em;padding:0 1em;text-align:center}
+.cevap.acik{background:#F0FDFA;color:#0F766E;letter-spacing:0}
+.cevap.acik.kotu{background:#FEF2F2;color:#B4382E}
+.isaret{display:flex;gap:1.4vmin}
+.isaret button{flex:1;font-weight:900;font-size:calc(var(--f)*.75);border-radius:99px;padding:1.5vmin 2vmin;background:#fff;color:var(--yazi);box-shadow:0 .7vmin 0 #CBD5E1;transition:transform .1s}
+.isaret button:active{transform:translateY(.4vmin)}
+.isaret .ev{background:var(--turkuaz);color:#fff;box-shadow:0 .7vmin 0 #0F766E}
+.isaret .hy{background:var(--mercan);color:#fff;box-shadow:0 .7vmin 0 #B4382E}
+.isaret .gz{flex:.7}
+.pasBtn{align-self:center;background:var(--kehribar);color:#fff;font-weight:900;font-size:calc(var(--f)*.9);letter-spacing:.14em;border-radius:99px;padding:1.6vmin 6vmin;box-shadow:0 .9vmin 0 #A8760F;transition:transform .1s}
+.pasBtn:active{transform:translateY(.6vmin);box-shadow:0 .3vmin 0 #A8760F}
+.bilgi{min-height:1.4em;text-align:center;font-weight:900;font-size:calc(var(--f)*.7);color:var(--soluk)}
+.bilgi.iyi{color:#0F766E}.bilgi.kotu{color:#B4382E}.bilgi.pas{color:#A8760F}
+.ipucu-kb{text-align:center;font-size:calc(var(--f)*.42);color:#94A3B8;font-weight:700}
+body.perdeli .panel{visibility:hidden}
+/* Sıra / mola perdesi */
+.perde{position:fixed;inset:0;background:rgba(15,23,42,.42);display:none;align-items:center;justify-content:center;z-index:55;padding:2vmin}
+.perde.acik{display:flex}
+.perde-ic{background:#fff;border-radius:4vmin;padding:4vmin 7vmin;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.4vmin;border-top:1.2vmin solid var(--pr,var(--gok));max-width:92vw;box-shadow:0 2vmin 6vmin rgba(15,23,42,.25);animation:gel .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes gel{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
+.p-ust{font-weight:900;font-size:calc(var(--f)*.6);color:var(--soluk);letter-spacing:.12em}
+.p-bas{font-weight:900;font-size:calc(var(--f)*1.5);color:var(--pr,var(--gok));line-height:1.1}
+.p-alt{font-weight:700;font-size:calc(var(--f)*.62);color:var(--soluk)}
+.perde .buyuk{background:var(--pr,var(--gok));box-shadow:0 .9vmin 0 rgba(15,23,42,.25)}
+/* ---------- Bitiş ---------- */
+#bitis{align-items:center;justify-content:center;padding:2vmin}
+.bitis-kart{background:rgba(255,255,255,.95);border-radius:4vmin;padding:3.5vmin 5vmin;text-align:center;box-shadow:0 2vmin 6vmin rgba(217,154,30,.2);display:flex;flex-direction:column;align-items:center;gap:1.4vmin;max-width:min(96vw,140vmin);width:100%;max-height:96vh;overflow:auto}
+.kupa{font-size:13vmin;line-height:1;animation:zipla 1.2s ease-in-out infinite}
+@keyframes zipla{0%,100%{transform:translateY(0)}50%{transform:translateY(-2vmin)}}
+.bitis-bas{font-size:calc(var(--f)*1.4);font-weight:900}
+.yildiz{font-size:7vmin;letter-spacing:1vmin}
+.yildiz b{color:#CBD5E1;font-weight:400}
+.bitis-skor{display:flex;gap:2.4vmin;flex-wrap:wrap;justify-content:center}
+.bitis-skor>div{background:var(--zemin);border-radius:2vmin;padding:1.4vmin 2.6vmin;font-weight:900;font-size:calc(var(--f)*.7);border-top:.7vmin solid var(--tr,var(--gok))}
+.bitis-skor h3{margin:0 0 .4vmin;font-size:calc(var(--f)*.6);color:var(--tr,var(--gok))}
+.bitis-skor span{margin:0 .5em;white-space:nowrap}
+.ozet{display:flex;gap:2vmin;width:100%;flex-wrap:wrap;text-align:left}
+.ozet-k{flex:1;min-width:34vmin}
+.ozet-k h4{margin:0 0 .8vmin;font-size:calc(var(--f)*.5);color:var(--soluk);letter-spacing:.1em;text-transform:uppercase}
+.ozet-liste{display:flex;flex-wrap:wrap;gap:.6vmin}
+.ozet-liste span{font-size:calc(var(--f)*.48);font-weight:800;padding:.35em .75em;border-radius:99px;background:#DBEAFE;color:#1E40AF}
+.ozet-liste span b{margin-right:.35em}
+.ozet-liste span.dogru{background:#CCFBF1;color:#0F766E}.ozet-liste span.yanlis{background:#FEE2E2;color:#B4382E}.ozet-liste span.pas{background:#FEF3C7;color:#92400E}
+.bitis-btn{display:flex;gap:1.6vmin;margin-top:1vmin}
+.bitis-btn button{font-weight:900;font-size:calc(var(--f)*.65);border-radius:99px;padding:1.5vmin 4vmin;background:#fff;box-shadow:0 .6vmin 0 #CBD5E1}
+.bitis-btn button.ana{background:var(--mercan);color:#fff;box-shadow:0 .6vmin 0 #B4382E}
+.onay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:60}
+.onay.acik{display:flex}
+.onay div{background:#fff;border-radius:3vmin;padding:3vmin 4vmin;text-align:center;font-weight:800;font-size:calc(var(--f)*.7)}
+.onay p{margin:0 0 2vmin}
+.onay button{font-weight:900;font-size:calc(var(--f)*.6);border-radius:99px;padding:1.2vmin 3.5vmin;margin:0 .6vmin;background:var(--zemin)}
+.onay button.ana{background:var(--mercan);color:#fff}
+#konfeti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:40}
+#konfeti i{position:absolute;top:-4vmin;width:1.4vmin;height:2.2vmin;border-radius:.3vmin;animation:dus linear forwards}
+@keyframes dus{to{transform:translateY(110vh) rotate(720deg)}}
+@media (orientation:portrait){
+  :root{--f:clamp(15px,4.4vmin,30px)}
+  .ayarlar{grid-template-columns:1fr}.etiket{display:none}
+  .sahne{flex-direction:column;justify-content:flex-start;overflow-y:auto;gap:2.4vmin}
+  .rosco{width:min(90vw,48vh);height:min(90vw,48vh)}
+  .panel{max-height:none;overflow:visible;width:100%}
+  .ipucu-kb{display:none}
+}
+</style></head><body>
+<div id="arka"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
+
+<section id="giris" class="ekran aktif">
+  <div class="ucan" id="ucan"></div>
+  <div class="giris-kart">
+    <div class="logo" id="logo"></div>
+    <div class="ust-yazi">HARF ÇEMBERİ</div>
+    <h1>Pasaparola</h1>
+    <div class="alt">8. Sınıf İngilizce · Arkadaşlık, mutfak, internet, doğal afetler · A–Z</div>
+    
+    <div class="ayarlar">
+      <div class="ayar"><span>Oyuncu</span><div class="sec" data-k="mod"><button data-v="tek">👤 Tek / sınıf</button><button data-v="takim">👥 İki takım</button></div></div>
+      <div class="ayar"><span>Cevap</span><div class="sec" data-k="cevap"><button data-v="secmeli">🔘 4 seçenek</button><button data-v="sozlu">🗣️ Sözlü</button></div></div>
+      <div class="ayar"><span>Süre (her oyuncu)</span><div class="sec" data-k="sure"><button data-v="120">2 dk</button><button data-v="180">3 dk</button><button data-v="240">4 dk</button><button data-v="0">Süresiz</button></div></div>
+      <div class="ayar"><span>Zorluk</span><div class="sec" data-k="zorluk"><button data-v="1">Kolay</button><button data-v="2">Orta</button><button data-v="3">Zor</button><button data-v="0">Karışık</button></div></div>
+      <div class="ayar"><span>Harf</span><div class="sec" data-k="harf"><button data-v="hepsi" id="harfHepsi">Bütün harfler</button><button data-v="20">20</button><button data-v="12">12</button></div></div>
+    </div>
+    <button id="basla" class="buyuk">Başla ▶</button>
+    <div class="nasil">Her harf için bir ipucu var: cevap o harfle <b>başlar</b> ya da <b>içinde</b> o harf geçer. Bilirsen cevapla; bilmiyorsan <b>PASAPAROLA</b> de, o harf turun sonunda yeniden gelir. Süre yalnız sırası gelen oyuncuda işler. İki takımda yanlış cevap ya da pas sırayı karşı takıma geçirir; iki takımın soruları farklıdır. En çok doğruyu yapan kazanır, eşitlikte az yanlış yapan. Her harfte birçok soru var; oynananlar hatırlanır, sonraki oyunda yenileri gelir. <b>Sözlü</b>de öğrenci cevabı söyler, öğretmen ✓ / ✗ ile işaretler.</div>
+  </div>
+</section>
+
+<section id="oyun" class="ekran">
+  <header class="bar">
+    <div class="etiket" id="etiket"></div>
+    <div class="skorlar" id="skorlar"></div>
+    <div class="araclar"><button id="molaBtn" title="Duraklat">⏸</button><button id="sesBtn" title="Ses">🔊</button><button id="tamBtn" title="Tam ekran">⛶</button><button id="cikBtn" title="Ana ekran">✕</button></div>
+  </header>
+  <main class="sahne">
+    <div class="rosco" id="rosco">
+      <div class="merkez">
+        <div class="m-takim" id="mTakim"></div>
+        <div class="m-sure" id="mSure"></div>
+        <div class="m-skor"><span class="d" id="mD"></span><span class="y" id="mY"></span><span class="p" id="mP"></span></div>
+        <div class="m-tur" id="mTur"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="soru">
+        <div class="kural"><b id="kHarf"></b><span id="kKural"></span></div>
+        <div class="ipucu" id="ipucu"></div>
+        <div class="secenekler" id="secenekler"></div>
+        <div class="sozlu" id="sozlu">
+          <div class="cevap" id="cevap"></div>
+          <div class="isaret"><button class="ev" id="dogruBtn">✓ Doğru</button><button class="gz" id="gosterBtn">👁 Cevap</button><button class="hy" id="yanlisBtn">✗ Yanlış</button></div>
+        </div>
+        <div class="bilgi" id="bilgi"></div>
+      </div>
+      <button class="pasBtn" id="pasBtn">⏭ PASAPAROLA</button>
+      <div class="ipucu-kb" id="kb"></div>
+    </div>
+  </main>
+</section>
+
+<section id="bitis" class="ekran">
+  <div class="bitis-kart">
+    <div class="kupa">🏆</div>
+    <div class="bitis-bas" id="bitisBas"></div>
+    <div class="yildiz" id="yildiz"></div>
+    <div class="bitis-skor" id="bitisSkor"></div>
+    <div class="ozet" id="ozet"></div>
+    <div class="bitis-btn"><button id="ayarBtn">⚙︎ Ayarlar</button><button id="tekrarBtn" class="ana">↻ Tekrar oyna</button></div>
+  </div>
+</section>
+
+<div class="perde" id="perde"><div class="perde-ic">
+  <div class="p-ust" id="pUst"></div>
+  <div class="p-bas" id="pBas"></div>
+  <div class="p-alt" id="pAlt"></div>
+  <button class="buyuk" id="pBtn"></button>
+</div></div>
+<div class="onay" id="onay"><div><p>Oyun bitirilsin mi?</p><button id="hayirBtn">Devam et</button><button id="evetBtn" class="ana">Bitir</button></div></div>
+<div id="konfeti"></div>
+
+<script>
+const HAVUZ=[{"h":"A","z":1,"s":"Bir daveti kabul etmek","d":"accept","y":["apologize","arrive","agree"]},{"h":"A","z":1,"s":"Macera","d":"adventure","y":["activity","attraction","abroad"]},{"h":"A","z":1,"s":"Telefonu açmak","d":"answer the phone","y":["ask for help","add up","apologize"]},{"h":"A","z":2,"s":"Özür dilemek","d":"apologize","y":["accept","agree","arrange"]},{"h":"A","z":2,"s":"Yurt dışında","d":"abroad","y":["aboard","around","ahead"]},{"h":"A","z":2,"s":"E-posta eki","d":"attachment","y":["account","address","app"]},{"h":"A","z":2,"s":"İnternetteki hesap","d":"account","y":["attachment","address","app"]},{"h":"A","z":3,"s":"Çığ","d":"avalanche","y":["atmosphere","adventure","aquarium"]},{"h":"A","z":3,"s":"Konaklama yeri","d":"accommodation","y":["attraction","adventure","activity"]},{"h":"A","z":3,"s":"Turistik yer, ilgi çeken yer","d":"attraction","y":["accommodation","activity","adventure"]},{"h":"B","z":1,"s":"Ödünç almak","d":"borrow","y":["bake","boil","burn"]},{"h":"B","z":1,"s":"Kaynatmak","d":"boil","y":["bake","blend","borrow"]},{"h":"B","z":1,"s":"Fırında pişirmek","d":"bake","y":["boil","burn","blend"]},{"h":"B","z":2,"s":"Kâse","d":"bowl","y":["board","bottle","box"]},{"h":"B","z":2,"s":"İnternet tarayıcısı","d":"browser","y":["blog","button","battery"]},{"h":"B","z":2,"s":"İpe bağlı yüksekten atlama","d":"bungee jumping","y":["biking","boxing","bowling"]},{"h":"B","z":2,"s":"Meşgul (telefon hattı)","d":"busy","y":["boring","brave","broken"]},{"h":"B","z":3,"s":"İnternette kişisel yazı sayfası","d":"blog","y":["browser","button","board"]},{"h":"B","z":3,"s":"Çalı süpürgesi","d":"broom","y":["brush","bucket","bowl"]},{"h":"B","z":3,"s":"Kova","d":"bucket","y":["basket","bowl","broom"]},{"h":"C","z":1,"s":"İnternette sohbet etmek","d":"chat","y":["chop","cheat","check"]},{"h":"C","z":1,"s":"Doğramak","d":"chop","y":["cook","crack","chat"]},{"h":"C","z":1,"s":"Pişirmek","d":"cook","y":["chop","clean","cut"]},{"h":"C","z":2,"s":"Geri aramak","d":"call back","y":["call off","come back","carry on"]},{"h":"C","z":2,"s":"Siber zorbalık","d":"cyberbullying","y":["cybercafe","cycling","cooking"]},{"h":"C","z":2,"s":"Ev işi","d":"chore","y":["choir","choose","chair"]},{"h":"C","z":2,"s":"Kamp yapmak","d":"camping","y":["caving","canoeing","climbing"]},{"h":"C","z":3,"s":"Kano yapmak","d":"canoeing","y":["camping","caving","climbing"]},{"h":"C","z":3,"s":"Mağaracılık","d":"caving","y":["camping","canoeing","climbing"]},{"h":"C","z":3,"s":"Deneyin sonucu, yargı","d":"conclusion","y":["connection","collection","condition"]},{"h":"D","z":1,"s":"Bulaşık: do the …","d":"dishes","y":["dusting","drawers","desks"]},{"h":"D","z":1,"s":"İndirmek","d":"download","y":["delete","display","discover"]},{"h":"D","z":1,"s":"Kuraklık","d":"drought","y":["drink","dream","drum"]},{"h":"D","z":2,"s":"Toz almak","d":"dust","y":["dish","dry","dig"]},{"h":"D","z":2,"s":"Dosyayı silmek","d":"delete","y":["download","display","design"]},{"h":"D","z":2,"s":"Numarayı çevirmek","d":"dial","y":["delete","draw","dive"]},{"h":"D","z":2,"s":"Felaket, afet","d":"disaster","y":["discovery","distance","dessert"]},{"h":"D","z":3,"s":"Keşif","d":"discovery","y":["disaster","distance","dictionary"]},{"h":"D","z":3,"s":"Varış noktası, gidilecek yer","d":"destination","y":["discovery","direction","distance"]},{"h":"D","z":3,"s":"Tehlikeli","d":"dangerous","y":["daily","delicious","difficult"]},{"h":"E","z":1,"s":"Deprem","d":"earthquake","y":["eruption","erosion","environment"]},{"h":"E","z":1,"s":"Deney","d":"experiment","y":["experience","equipment","exhibition"]},{"h":"E","z":1,"s":"Elektronik posta","d":"e-mail","y":["exam","enter","easy"]},{"h":"E","z":2,"s":"Kanıt","d":"evidence","y":["experience","exhibition","election"]},{"h":"E","z":2,"s":"Ekstrem sporlar","d":"extreme sports","y":["exercise","experiment","excuse"]},{"h":"E","z":2,"s":"Boşaltmak (çöp kutusunu)","d":"empty","y":["end","enjoy","enter"]},{"h":"E","z":2,"s":"Yanardağ püskürmesi","d":"eruption","y":["earthquake","erosion","election"]},{"h":"E","z":3,"s":"Tahliye etmek","d":"evacuate","y":["evaluate","examine","escape"]},{"h":"E","z":3,"s":"Kısa gezi","d":"excursion","y":["exhibition","exercise","experiment"]},{"h":"E","z":3,"s":"Acil durum","d":"emergency","y":["energy","equipment","election"]},{"h":"F","z":1,"s":"Arkadaşlık, dostluk","d":"friendship","y":["freedom","festival","fortune"]},{"h":"F","z":1,"s":"Sel","d":"flood","y":["fire","fog","forest"]},{"h":"F","z":1,"s":"Buzdolabı","d":"fridge","y":["freezer","fork","frying pan"]},{"h":"F","z":2,"s":"Tava","d":"frying pan","y":["fridge","fork","flour"]},{"h":"F","z":2,"s":"Un","d":"flour","y":["flower","fruit","fork"]},{"h":"F","z":2,"s":"Çamaşırı katlamak","d":"fold","y":["feed","fill","fix"]},{"h":"F","z":2,"s":"Orman yangını","d":"forest fire","y":["flood","fog","fire station"]},{"h":"F","z":3,"s":"Formül","d":"formula","y":["form","forum","fork"]},{"h":"F","z":3,"s":"Sahte","d":"fake","y":["fair","fast","free"]},{"h":"F","z":3,"s":"Kırılgan (eşya)","d":"fragile","y":["friendly","funny","famous"]},{"h":"G","z":1,"s":"Küresel ısınma","d":"global warming","y":["greenhouse","gravity","government"]},{"h":"G","z":1,"s":"Rehberli tur","d":"guided tour","y":["guest house","gift shop","gate"]},{"h":"G","z":1,"s":"Misafir","d":"guest","y":["gate","ghost","gift"]},{"h":"G","z":2,"s":"Rendelemek","d":"grate","y":["grill","greet","grow"]},{"h":"G","z":2,"s":"Izgarada pişirmek","d":"grill","y":["grate","greet","grow"]},{"h":"G","z":2,"s":"Dedikodu yapmak","d":"gossip","y":["guess","greet","grow"]},{"h":"G","z":2,"s":"Çöp","d":"garbage","y":["garage","gallery","garden"]},{"h":"G","z":3,"s":"Sera etkisi","d":"greenhouse effect","y":["global warming","gravity","generation"]},{"h":"G","z":3,"s":"Dâhi","d":"genius","y":["generous","gentle","giant"]},{"h":"G","z":3,"s":"Elektronik alet","d":"gadget","y":["garden","garage","gate"]},{"h":"H","z":1,"s":"Kasırga","d":"hurricane","y":["hailstorm","heatwave","harbour"]},{"h":"H","z":1,"s":"Telefonu kapatmak","d":"hang up","y":["hold on","hurry up","hand in"]},{"h":"H","z":1,"s":"Dürüst","d":"honest","y":["helpful","handsome","humble"]},{"h":"H","z":2,"s":"Hatta beklemek","d":"hold on","y":["hang up","hurry up","hand in"]},{"h":"H","z":2,"s":"Arkadaşlarla vakit geçirmek","d":"hang out","y":["hang up","hold on","help out"]},{"h":"H","z":2,"s":"Sıcak hava dalgası","d":"heatwave","y":["hurricane","hailstorm","harbour"]},{"h":"H","z":2,"s":"Doğa yürüyüşü","d":"hiking","y":["horse riding","hockey","hunting"]},{"h":"H","z":3,"s":"Dolu fırtınası","d":"hailstorm","y":["hurricane","heatwave","harbour"]},{"h":"H","z":3,"s":"Hipotez","d":"hypothesis","y":["history","hobby","harmony"]},{"h":"H","z":3,"s":"Ucuz konaklama yeri","d":"hostel","y":["hotel","hospital","hall"]},{"h":"I","z":1,"s":"Yemek malzemeleri","d":"ingredients","y":["instructions","invitations","inventions"]},{"h":"I","z":1,"s":"Davet etmek","d":"invite","y":["inform","improve","install"]},{"h":"I","z":1,"s":"İnternet","d":"internet","y":["interview","invention","island"]},{"h":"I","z":2,"s":"Programı kurmak","d":"install","y":["invite","inform","improve"]},{"h":"I","z":2,"s":"Ekrandaki simge","d":"icon","y":["idea","ink","ice"]},{"h":"I","z":2,"s":"İcat, buluş","d":"invention","y":["inventor","interview","invitation"]},{"h":"I","z":2,"s":"Gezi programı","d":"itinerary","y":["invitation","island","interview"]},{"h":"I","z":3,"s":"Ütülemek","d":"iron","y":["invite","install","inform"]},{"h":"I","z":3,"s":"Araştırmak, incelemek","d":"investigate","y":["invite","invent","install"]},{"h":"I","z":3,"s":"Seyahat sigortası","d":"insurance","y":["instructions","ingredients","invitation"]},{"h":"J","z":1,"s":"Yolculuk","d":"journey","y":["jungle","joke","journal"]},{"h":"J","z":1,"s":"Şaka","d":"joke","y":["job","joy","jeans"]},{"h":"J","z":1,"s":"Kıskanç","d":"jealous","y":["joyful","jolly","junior"]},{"h":"J","z":2,"s":"Kavanoz","d":"jar","y":["jug","jam","jet"]},{"h":"J","z":2,"s":"Hafif tempoda koşmak","d":"jog","y":["jump","join","juggle"]},{"h":"J","z":2,"s":"Katılmak","d":"join","y":["jog","jump","joke"]},{"h":"J","z":2,"s":"Balta girmemiş orman","d":"jungle","y":["journey","jewel","jar"]},{"h":"J","z":3,"s":"Uzun uçuş yorgunluğu","d":"jet lag","y":["jet ski","jacket","jam"]},{"h":"J","z":3,"s":"Hâkim","d":"judge","y":["journal","jockey","joker"]},{"h":"J","z":3,"s":"Su motoru","d":"jet ski","y":["jet lag","jacket","judo"]},{"h":"K","z":1,"s":"Bilgi","d":"knowledge","y":["knife","keyboard","kindness"]},{"h":"K","z":1,"s":"Bıçak","d":"knife","y":["knee","kettle","kitchen"]},{"h":"K","z":1,"s":"Klavye","d":"keyboard","y":["kettle","key","kitchen"]},{"h":"K","z":2,"s":"Su ısıtıcısı","d":"kettle","y":["knife","keyboard","kitchen"]},{"h":"K","z":2,"s":"İyilik, nezaket","d":"kindness","y":["knowledge","keyboard","kettle"]},{"h":"K","z":2,"s":"Bağlantıyı koparmamak","d":"keep in touch","y":["keep calm","kick off","know how"]},{"h":"K","z":2,"s":"Kayak teknesiyle kürek çekme","d":"kayaking","y":["karate","kicking","knitting"]},{"h":"K","z":3,"s":"Yıkmak","d":"knock down","y":["knock out","keep out","kick off"]},{"h":"K","z":3,"s":"Kilogram","d":"kilogram","y":["kilometre","kitchen","keyboard"]},{"h":"K","z":3,"s":"Hamur yoğurmak","d":"knead","y":["knit","kneel","knock"]},{"h":"L","z":1,"s":"Heyelan","d":"landslide","y":["lightning","lake","lava"]},{"h":"L","z":1,"s":"Şimşek, yıldırım","d":"lightning","y":["landslide","light","lava"]},{"h":"L","z":1,"s":"Dizüstü bilgisayar","d":"laptop","y":["ladder","lamp","lake"]},{"h":"L","z":2,"s":"Yıkanacak çamaşır","d":"laundry","y":["library","ladder","lettuce"]},{"h":"L","z":2,"s":"Mesaj bırakmak","d":"leave a message","y":["leave home","look after","listen to"]},{"h":"L","z":2,"s":"Lav","d":"lava","y":["lake","lamp","land"]},{"h":"L","z":2,"s":"İnternet bağlantısı (adres)","d":"link","y":["lake","lamp","line"]},{"h":"L","z":3,"s":"Laboratuvar","d":"laboratory","y":["library","lavatory","ladder"]},{"h":"L","z":3,"s":"Yaşam tarzı","d":"lifestyle","y":["lifeguard","lifetime","lighthouse"]},{"h":"L","z":3,"s":"Sadık","d":"loyal","y":["lucky","lazy","lonely"]},{"h":"M","z":1,"s":"Karıştırmak","d":"mix","y":["melt","measure","microwave"]},{"h":"M","z":1,"s":"Mesaj","d":"message","y":["mobile","meeting","memory"]},{"h":"M","z":1,"s":"Cep telefonu","d":"mobile phone","y":["message","meeting","microwave"]},{"h":"M","z":2,"s":"Eritmek","d":"melt","y":["mix","measure","make"]},{"h":"M","z":2,"s":"Mikrodalga fırın","d":"microwave","y":["mobile phone","mixer","machine"]},{"h":"M","z":2,"s":"Yatağı toplamak","d":"make the bed","y":["make a cake","mop the floor","mow the lawn"]},{"h":"M","z":2,"s":"Paspaslamak","d":"mop","y":["melt","mix","mow"]},{"h":"M","z":3,"s":"Ölçmek","d":"measure","y":["melt","mix","mop"]},{"h":"M","z":3,"s":"Dağcılık","d":"mountaineering","y":["mountain biking","marathon","motor racing"]},{"h":"M","z":3,"s":"Mikroskop","d":"microscope","y":["microwave","microphone","mirror"]},{"h":"N","z":1,"s":"Doğal (… disaster)","d":"natural","y":["national","normal","nervous"]},{"h":"N","z":1,"s":"Bilgisayar ağı","d":"network","y":["newsletter","notebook","notification"]},{"h":"N","z":1,"s":"Erişte","d":"noodles","y":["nuts","napkin","noon"]},{"h":"N","z":2,"s":"Telefondaki bildirim","d":"notification","y":["network","newsletter","notebook"]},{"h":"N","z":2,"s":"Peçete","d":"napkin","y":["noodles","nuts","nail"]},{"h":"N","z":2,"s":"Kuruyemiş","d":"nuts","y":["noodles","napkin","nest"]},{"h":"N","z":2,"s":"Bülten","d":"newsletter","y":["network","notification","newspaper"]},{"h":"N","z":3,"s":"Nükleer","d":"nuclear","y":["natural","normal","national"]},{"h":"N","z":3,"s":"Gergin","d":"nervous","y":["noisy","naughty","neat"]},{"h":"N","z":3,"s":"Kâbus","d":"nightmare","y":["nightlife","night shift","nickname"]},{"h":"O","z":1,"s":"Çevrim içi","d":"online","y":["offline","open","order"]},{"h":"O","z":1,"s":"Fırın","d":"oven","y":["onion","oil","omelette"]},{"h":"O","z":1,"s":"Çevrim dışı","d":"offline","y":["online","open","order"]},{"h":"O","z":2,"s":"Sipariş vermek","d":"order","y":["offer","open","own"]},{"h":"O","z":2,"s":"Yemeklik yağ","d":"oil","y":["onion","olive","oven"]},{"h":"O","z":2,"s":"Telefon operatörü","d":"operator","y":["officer","optician","organizer"]},{"h":"O","z":2,"s":"Gözlemlemek","d":"observe","y":["obey","offer","order"]},{"h":"O","z":3,"s":"Açık havada","d":"outdoor","y":["online","offline","office"]},{"h":"O","z":3,"s":"Aşırı kalabalık","d":"overcrowded","y":["overweight","outdoor","overnight"]},{"h":"O","z":3,"s":"Zıt, karşıt","d":"opposite","y":["online","offline","outside"]},{"h":"P","z":1,"s":"Şifre","d":"password","y":["passport","printer","profile"]},{"h":"P","z":1,"s":"Kabuğunu soymak","d":"peel","y":["pour","pan","pepper"]},{"h":"P","z":1,"s":"Sıvıyı dökmek","d":"pour","y":["peel","pan","pepper"]},{"h":"P","z":2,"s":"Pasaport","d":"passport","y":["password","printer","profile"]},{"h":"P","z":2,"s":"Biber","d":"pepper","y":["peel","pour","pan"]},{"h":"P","z":2,"s":"Sosyal medya profili","d":"profile","y":["password","printer","passport"]},{"h":"P","z":2,"s":"Yamaç paraşütü","d":"paragliding","y":["parachute","parking","painting"]},{"h":"P","z":3,"s":"Telefon görüşmesi","d":"phone call","y":["phone book","photo","phrase"]},{"h":"P","z":3,"s":"Deneyde işlem sırası","d":"procedure","y":["product","problem","promise"]},{"h":"P","z":3,"s":"Tahmin","d":"prediction","y":["protection","production","presentation"]},{"h":"Q","z":1,"s":"Kuyruk","d":"queue","y":["quiz","quarter","quote"]},{"h":"Q","z":1,"s":"Sessiz","d":"quiet","y":["quick","quite","quiz"]},{"h":"Q","z":1,"s":"Soru","d":"question","y":["quiz","queen","quick"]},{"h":"Q","z":2,"s":"Çabuk","d":"quick","y":["quiet","quite","quiz"]},{"h":"Q","z":2,"s":"Bilgi yarışması","d":"quiz","y":["queue","quilt","quote"]},{"h":"Q","z":2,"s":"Alet, ekipman","d":"equipment","y":["equal","quick","question"],"k":"i"},{"h":"Q","z":2,"s":"Limonu sıkmak","d":"squeeze","y":["square","liquid","equal"],"k":"i"},{"h":"Q","z":3,"s":"Tartışmak","d":"quarrel","y":["quote","quarter","queue"]},{"h":"Q","z":3,"s":"Kalite","d":"quality","y":["quantity","quarter","quarrel"]},{"h":"Q","z":3,"s":"Sıvı","d":"liquid","y":["square","equal","squeeze"],"k":"i"},{"h":"R","z":1,"s":"Bir daveti reddetmek","d":"refuse","y":["repeat","return","remember"]},{"h":"R","z":1,"s":"Yemek tarifi","d":"recipe","y":["receipt","record","repeat"]},{"h":"R","z":1,"s":"Botla akarsuda iniş","d":"rafting","y":["running","riding","rowing"]},{"h":"R","z":2,"s":"Araştırmacı","d":"researcher","y":["reporter","receptionist","robot"]},{"h":"R","z":2,"s":"Rezervasyon","d":"reservation","y":["recipe","result","research"]},{"h":"R","z":2,"s":"Sonuç","d":"result","y":["research","recipe","reason"]},{"h":"R","z":2,"s":"Kaya tırmanışı","d":"rock climbing","y":["rafting","riding","rowing"]},{"h":"R","z":3,"s":"Kurtarmak","d":"rescue","y":["research","reserve","result"]},{"h":"R","z":3,"s":"Güvenilir","d":"reliable","y":["relaxed","rude","rich"]},{"h":"R","z":3,"s":"Araştırma","d":"research","y":["rescue","result","reason"]},{"h":"S","z":1,"s":"Yeri süpürmek","d":"sweep","y":["sew","shake","spill"]},{"h":"S","z":1,"s":"Tuz","d":"salt","y":["sugar","sauce","spice"]},{"h":"S","z":1,"s":"Dilimlemek","d":"slice","y":["stir","spread","serve"]},{"h":"S","z":2,"s":"Kaşıkla karıştırmak","d":"stir","y":["slice","serve","spread"]},{"h":"S","z":2,"s":"Gezip görme","d":"sightseeing","y":["shopping","skiing","sailing"]},{"h":"S","z":2,"s":"Uçaktan paraşütle atlama","d":"skydiving","y":["scuba diving","skiing","surfing"]},{"h":"S","z":2,"s":"Sosyal medya","d":"social media","y":["software","smartphone","search engine"]},{"h":"S","z":3,"s":"Bilim insanı","d":"scientist","y":["science","scientific","sculptor"]},{"h":"S","z":3,"s":"Hatıra eşyası","d":"souvenir","y":["suitcase","surprise","supermarket"]},{"h":"S","z":3,"s":"Fırtına","d":"storm","y":["stone","star","stir"]},{"h":"T","z":1,"s":"Hortum (dönen fırtına)","d":"tornado","y":["tsunami","thunder","typhoon"]},{"h":"T","z":1,"s":"Turist","d":"tourist","y":["tour guide","traveller","tradition"]},{"h":"T","z":1,"s":"Ergen, genç","d":"teenager","y":["teacher","tenant","trainer"]},{"h":"T","z":2,"s":"Dev deniz dalgası","d":"tsunami","y":["tornado","thunder","typhoon"]},{"h":"T","z":2,"s":"Toplamak, düzenlemek","d":"tidy up","y":["take out","turn off","try on"]},{"h":"T","z":2,"s":"Çöpü çıkarmak","d":"take out the rubbish","y":["tidy up the room","turn off the light","try on a dress"]},{"h":"T","z":2,"s":"Klavyeyle yazmak","d":"type","y":["tweet","tap","talk"]},{"h":"T","z":3,"s":"Kuram","d":"theory","y":["thermometer","temperature","tool"]},{"h":"T","z":3,"s":"Yemek kaşığı","d":"tablespoon","y":["teaspoon","tablet","table"]},{"h":"T","z":3,"s":"Güvenmek","d":"trust","y":["try","trip","truck"]},{"h":"U","z":1,"s":"İnternete yüklemek","d":"upload","y":["update","unload","use"]},{"h":"U","z":1,"s":"Anlamak","d":"understand","y":["undo","upset","unlock"]},{"h":"U","z":1,"s":"Arkadaş canlısı olmayan","d":"unfriendly","y":["unfair","untidy","unkind"]},{"h":"U","z":2,"s":"Güncellemek","d":"update","y":["upload","upset","undo"]},{"h":"U","z":2,"s":"Kullanıcı adı","d":"username","y":["user","uniform","update"]},{"h":"U","z":2,"s":"Fişini çekmek","d":"unplug","y":["unlock","update","unload"]},{"h":"U","z":2,"s":"Dağınık","d":"untidy","y":["unkind","unusual","unfair"]},{"h":"U","z":3,"s":"İnanılmaz","d":"unbelievable","y":["unforgettable","unfriendly","unusual"]},{"h":"U","z":3,"s":"Eşsiz, benzersiz","d":"unique","y":["uniform","united","universe"]},{"h":"U","z":3,"s":"Acil","d":"urgent","y":["usual","useful","upset"]},{"h":"V","z":1,"s":"Elektrikli süpürge","d":"vacuum cleaner","y":["vase","van","video"]},{"h":"V","z":1,"s":"Bilgisayar virüsü","d":"virus","y":["video","visitor","volume"]},{"h":"V","z":1,"s":"Görüntülü arama","d":"video call","y":["video game","voicemail","visit"]},{"h":"V","z":2,"s":"Elektrikli süpürgeyle süpürmek","d":"vacuum","y":["vote","visit","vanish"]},{"h":"V","z":2,"s":"Sesli mesaj","d":"voicemail","y":["video call","volume","visitor"]},{"h":"V","z":2,"s":"Ses düzeyi","d":"volume","y":["video","virus","visit"]},{"h":"V","z":2,"s":"Vize","d":"visa","y":["virus","visit","vase"]},{"h":"V","z":3,"s":"Yanardağ","d":"volcano","y":["valley","village","violin"]},{"h":"V","z":3,"s":"Deneydeki değişken","d":"variable","y":["valuable","vegetable","village"]},{"h":"V","z":3,"s":"Tatil (Amerikan İngilizcesi)","d":"vacation","y":["vaccination","validation","variation"]},{"h":"W","z":1,"s":"Yumurta çırpmak","d":"whisk","y":["wash","wrap","warm"]},{"h":"W","z":1,"s":"Web sitesi","d":"website","y":["webcam","window","wallet"]},{"h":"W","z":1,"s":"Orman yangını (kontrolsüz)","d":"wildfire","y":["windstorm","wildlife","waterfall"]},{"h":"W","z":2,"s":"Bulaşık yıkamak","d":"wash the dishes","y":["water the plants","walk the dog","wipe the table"]},{"h":"W","z":2,"s":"Çiçekleri sulamak","d":"water the plants","y":["wash the dishes","walk the dog","wipe the table"]},{"h":"W","z":2,"s":"Yanlış numara","d":"wrong number","y":["wrong way","wrong answer","welcome"]},{"h":"W","z":2,"s":"Web kamerası","d":"webcam","y":["website","window","wallet"]},{"h":"W","z":3,"s":"Bezle silmek","d":"wipe","y":["wash","wrap","wait"]},{"h":"W","z":3,"s":"Rüzgâr fırtınası","d":"windstorm","y":["wildfire","waterfall","wildlife"]},{"h":"W","z":3,"s":"Kablosuz","d":"wireless","y":["wise","window","wild"]},{"h":"X","z":1,"s":"Kısa mesaj (telefonda)","d":"text","y":["next","fax","box"],"k":"i"},{"h":"X","z":1,"s":"Açıklamak","d":"explain","y":["explore","expect","exchange"],"k":"i"},{"h":"X","z":1,"s":"Dinlenmek, rahatlamak","d":"relax","y":["excuse","mix","next"],"k":"i"},{"h":"X","z":2,"s":"Pahalı","d":"expensive","y":["extensive","excited","exciting"],"k":"i"},{"h":"X","z":2,"s":"Keşfetmek","d":"explore","y":["explain","expect","exchange"],"k":"i"},{"h":"X","z":2,"s":"Değiş tokuş etmek","d":"exchange","y":["explain","explore","expect"],"k":"i"},{"h":"X","z":2,"s":"Aşırı, uç","d":"extreme","y":["expert","explain","exit"],"k":"i"},{"h":"X","z":3,"s":"Keşif gezisi","d":"expedition","y":["exhibition","expectation","explanation"],"k":"i"},{"h":"X","z":3,"s":"Karışım","d":"mixture","y":["texture","fixture","mixer"],"k":"i"},{"h":"X","z":3,"s":"Oksijen","d":"oxygen","y":["exhibit","extinct","box"],"k":"i"},{"h":"Y","z":1,"s":"Dün","d":"yesterday","y":["yearly","yet","young"]},{"h":"Y","z":1,"s":"Yumurta sarısı","d":"yolk","y":["yogurt","yeast","yam"]},{"h":"Y","z":1,"s":"Çok lezzetli","d":"yummy","y":["yellow","young","yearly"]},{"h":"Y","z":2,"s":"Hamur mayası","d":"yeast","y":["yolk","yogurt","yam"]},{"h":"Y","z":2,"s":"Bağırmak","d":"yell","y":["yawn","yes","yet"]},{"h":"Y","z":2,"s":"Video içerik üreticisi","d":"YouTuber","y":["young","youth","yoga"]},{"h":"Y","z":2,"s":"Yat","d":"yacht","y":["yard","yoga","yarn"]},{"h":"Y","z":3,"s":"Henüz (olumsuz cümlede)","d":"yet","y":["yes","yell","yesterday"]},{"h":"Y","z":3,"s":"Gençlik hosteli","d":"youth hostel","y":["youth club","yacht","yard"]},{"h":"Y","z":3,"s":"Verim, ürün miktarı","d":"yield","y":["yell","yard","yeast"]},{"h":"Z","z":1,"s":"Derin dondurucu","d":"freezer","y":["frozen","breeze","pizza"],"k":"i"},{"h":"Z","z":1,"s":"Bölge, alan","d":"zone","y":["zero","zebra","zoom"]},{"h":"Z","z":1,"s":"Telefonla en çok sipariş edilen İtalyan yemeği","d":"pizza","y":["puzzle","prize","size"],"k":"i"},{"h":"Z","z":2,"s":"Tel üzerinde kayma","d":"zip line","y":["zigzag","zoom","zone"]},{"h":"Z","z":2,"s":"Yakınlaştırmak","d":"zoom in","y":["zip up","zone out","zero in"]},{"h":"Z","z":2,"s":"Kar fırtınası","d":"blizzard","y":["buzzard","lizard","wizard"],"k":"i"},{"h":"Z","z":2,"s":"Harika","d":"amazing","y":["amazed","crazy","lazy"],"k":"i"},{"h":"Z","z":3,"s":"Tehlike, risk","d":"hazard","y":["hazel","lizard","blizzard"],"k":"i"},{"h":"Z","z":3,"s":"Ufuk","d":"horizon","y":["horizontal","zero","zoom"],"k":"i"},{"h":"Z","z":3,"s":"Sıfır","d":"zero","y":["zone","zoo","zip"]}];
+// Havuz: [{ h:'A', s:'ipucu', d:'doğru cevap', y:['çeldirici', …], k:'i' }, …] — sınıf düzeyine göre ayrı dosya (src/data/activities/<branş>/paso<sınıf>.js).
+// k:'i' → cevabın İÇİNDE o harf geçer; yoksa cevap o harfle BAŞLAR. Bir harfte birden çok soru olursa iki takıma farklıları düşer
+// ve oynananlar cihazda hatırlanır (sonraki oyunda görülmemişler gelir).
+const ORNEK=[
+  {h:'A',s:'Türkiye’nin Asya kıtasındaki toprakları',d:'Anadolu',y:['Avrupa','Afrika','Arabistan']},
+  {h:'C',s:'Türkiye’nin yönetim biçimi',d:'Cumhuriyet',y:['Monarşi','Oligarşi','Teokrasi']},
+  {h:'D',s:'Halkın yönetime katıldığı yönetim biçimi',d:'Demokrasi',y:['Diktatörlük','Derebeylik','Dinasti']},
+  {h:'F',s:'Başkenti Gordion olan Anadolu uygarlığı',d:'Frig',y:['Fenike','Lidya','Urartu']},
+  {h:'K',s:'Bir toplumun maddi ve manevi değerlerinin tümü',d:'Kültür',y:['Kıta','Kaynak','Krallık']}
+];
+const SORULAR=(typeof HAVUZ!=='undefined'&&Array.isArray(HAVUZ)&&HAVUZ.length)?HAVUZ:ORNEK;
+const ANAHTAR='mamoste-paso:ingilizce-paso-8-genel';
+const AYAR_KEY='mamoste-paso-ayar2';
+const TAKIM=[{ad:'Mercan',sinif:'m',renk:'var(--mercan)'},{ad:'Turkuaz',sinif:'t',renk:'var(--turkuaz)'}];
+const TEK={ad:'',sinif:'g',renk:'var(--gok)'};
+const RENK=['var(--gok)','var(--turkuaz)','var(--mercan)','var(--kehribar)'];
+const $=id=>document.getElementById(id);
+const oku=(k,v)=>{try{const x=localStorage.getItem(k);return x?JSON.parse(x):v}catch(e){return v}};
+const yaz=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const esc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function karistir(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+// --- ses ---
+let AC=null,sessiz=oku('mamoste-paso-sessiz',false);
+function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function ton(f,t0,d,tip,v){const a=ac();if(!a||sessiz)return;const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+t0;
+  o.type=tip||'sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v||.16,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+d+.05)}
+const ses={
+  tik:()=>ton(700,0,.07,'triangle',.1),
+  dogru:()=>[523,659,784,1047].forEach((f,i)=>ton(f,i*.08,.28,'triangle',.16)),
+  yanlis:()=>{ton(220,0,.22,'sawtooth',.06);ton(165,.12,.3,'sawtooth',.06)},
+  pas:()=>{ton(660,0,.12,'triangle',.12);ton(495,.1,.2,'triangle',.12)},
+  saat:()=>ton(1200,0,.05,'square',.04),
+  bitti:()=>{ton(196,0,.7,'square',.05);ton(147,.05,.7,'square',.05)},
+  basla:()=>[392,523,659].forEach((f,i)=>ton(f,i*.1,.22,'triangle',.14)),
+  final:()=>[523,659,784,659,784,1047,1319].forEach((f,i)=>ton(f,i*.12,.4,'triangle',.15))
+};
+
+// --- alfabe: havuzda Q/W/X varsa (ve Ç/Ğ/İ/Ö/Ş/Ü yoksa) İngiliz alfabesi, yoksa Türk alfabesi ---
+const TURK_ALFABE=[...'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ'];
+const ENG_ALFABE=[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const TR=SORULAR.some(x=>/[ÇĞİÖŞÜ]/.test(x.h))||!SORULAR.some(x=>/[QWX]/.test(x.h));
+const ALFABE=TR?TURK_ALFABE:ENG_ALFABE;
+const GRUP={};
+SORULAR.forEach(q=>{if(!q||!q.h||!q.s||!q.d)return;const h=String(q.h).trim().toLocaleUpperCase(TR?'tr':'en');(GRUP[h]=GRUP[h]||[]).push(q)});
+const HARFLER=ALFABE.filter(h=>GRUP[h]);
+
+// --- giriş ---
+$('logo').innerHTML=HARFLER.slice(0,3).concat('?').map(h=>`<i>${esc(h)}</i>`).join('');
+(function(){const u=$('ucan');const harf=karistir(HARFLER.slice()).slice(0,12);
+  harf.forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.left=(4+(i*83)%88)+'%';s.style.top=(4+(i*47)%86)+'%';
+    s.style.borderColor=RENK[i%4];s.style.color=RENK[i%4];s.style.setProperty('--r',((i%2?1:-1)*(3+i%5))+'deg');s.style.animationDelay=(-i*1.3)+'s';u.appendChild(s)})})();
+$('harfHepsi').textContent=`Bütün harfler (${HARFLER.length})`;
+const VARSAYILAN={mod:'tek',cevap:'secmeli',sure:'180',harf:'hepsi',zorluk:'0'};
+const AYAR=Object.assign({},VARSAYILAN,oku(AYAR_KEY,{}));
+document.querySelectorAll('.sec').forEach(sec=>{const k=sec.dataset.k;if(![...sec.querySelectorAll('button')].some(b=>b.dataset.v===AYAR[k]))AYAR[k]=VARSAYILAN[k]});
+function boyaHepsi(){document.querySelectorAll('.sec').forEach(sec=>sec.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===AYAR[sec.dataset.k])))}
+document.querySelectorAll('.sec').forEach(sec=>sec.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;AYAR[sec.dataset.k]=b.dataset.v;yaz(AYAR_KEY,AYAR);boyaHepsi();ses.tik()}));
+boyaHepsi();
+function ekran(id){document.querySelectorAll('.ekran').forEach(e=>e.classList.toggle('aktif',e.id===id))}
+
+// --- soru seçimi: önce görülmemişler; iki takımda aynı harfe farklı soru ---
+const GOR_KEY=ANAHTAR+':gorulen';
+const GOR=new Set(oku(GOR_KEY,[]));
+// Zorluk (z: 1 kolay, 2 orta, 3 zor; yazılmamışsa 2): seçilen düzeyde soru yoksa en yakın düzeyden alınır.
+function soruSec(h,haric){
+  const hedef=+AYAR.zorluk||0,zz=q=>+q.z||2;
+  let hepsi=GRUP[h];
+  const digeri=hepsi.filter(q=>q!==haric);
+  if(hedef&&digeri.length){const fark=Math.min(...digeri.map(q=>Math.abs(zz(q)-hedef)));hepsi=digeri.filter(q=>Math.abs(zz(q)-hedef)===fark)}
+  let aday=hepsi.filter(q=>q!==haric&&!GOR.has(q.d));
+  if(!aday.length){hepsi.forEach(q=>{if(q!==haric)GOR.delete(q.d)});aday=hepsi.filter(q=>q!==haric)}
+  if(!aday.length)aday=hepsi;
+  const q=aday[Math.floor(Math.random()*aday.length)];GOR.add(q.d);return q;
+}
+
+// --- oyun durumu ---
+let O=null;
+const takim=()=>O.tk[O.sira];
+const simdiki=()=>takim().harfler[takim().idx];
+const say=(t,d)=>t.harfler.filter(x=>x.d===d).length;
+function sureYaz(s){if(!isFinite(s))return '∞';const n=Math.max(0,Math.ceil(s));return `${Math.floor(n/60)}:${String(n%60).padStart(2,'0')}`}
+
+function basla(){
+  ac();
+  let harfler=HARFLER.slice();
+  const lim=AYAR.harf==='hepsi'?99:+AYAR.harf;
+  if(harfler.length>lim){const s=new Set(karistir(harfler.slice()).slice(0,lim));harfler=HARFLER.filter(h=>s.has(h))}
+  const n=AYAR.mod==='takim'?2:1;const sn=+AYAR.sure;
+  const tk=[];
+  for(let i=0;i<n;i++)tk.push(Object.assign({},n>1?TAKIM[i]:TEK,{harfler:[],kalan:sn>0?sn:Infinity,idx:0,tur:1,bitti:false}));
+  harfler.forEach(h=>{const q0=soruSec(h);tk[0].harfler.push({h,q:q0,d:'bos'});if(n>1)tk[1].harfler.push({h,q:soruSec(h,q0),d:'bos'})});
+  yaz(GOR_KEY,[...GOR]);
+  O={tk,sira:0,calisiyor:false,beklet:false,son:performance.now(),secenek:[]};
+  $('etiket').textContent=document.title;
+  $('secenekler').style.display=AYAR.cevap==='secmeli'?'':'none';
+  $('sozlu').style.display=AYAR.cevap==='sozlu'?'':'none';
+  $('kb').textContent=AYAR.cevap==='sozlu'?'Klavye: D = doğru · Y = yanlış · C = cevabı göster · boşluk = pas':'Klavye: 1–4 = seçenek · boşluk = pas';
+  ekran('oyun');roscoKur();
+  siraVer(0,n>1?'İLK SIRA':'HAZIR MISINIZ?');
+}
+
+// --- harf çemberi ---
+function roscoKur(){
+  const r=$('rosco');r.querySelectorAll('.h').forEach(e=>e.remove());
+  const n=takim().harfler.length;
+  O.dko=Math.min(.105,Math.PI*.9/n*.8);
+  takim().harfler.forEach((x,i)=>{const a=-Math.PI/2+i*2*Math.PI/n;const e=document.createElement('div');e.className='h';e.textContent=x.h;
+    e.style.left=(50+45*Math.cos(a))+'%';e.style.top=(50+45*Math.sin(a))+'%';r.appendChild(e)});
+  boyut();
+}
+function boyut(){if(!O)return;const r=$('rosco');const w=r.clientWidth;r.style.setProperty('--rs',w+'px');r.style.setProperty('--dk',(w*O.dko)+'px')}
+window.addEventListener('resize',boyut);
+function roscoCiz(){
+  const t=takim();const el=$('rosco').querySelectorAll('.h');
+  t.harfler.forEach((x,i)=>{const e=el[i];if(!e)return;e.className='h'+(x.d!=='bos'?' '+x.d:'')+(i===t.idx&&!t.bitti&&(x.d==='bos'||x.d==='pas')?' simdi':'')});
+  $('oyun').style.setProperty('--tr',t.renk);
+  $('mTakim').textContent=t.ad?t.ad+' takımı':'';
+  $('mD').textContent='✓ '+say(t,'dogru');$('mY').textContent='✗ '+say(t,'yanlis');
+  const p=say(t,'pas');$('mP').textContent=p?'⏭ '+p:'';
+  $('mTur').textContent=t.tur>1?t.tur+'. TUR':'';
+  sureCiz();
+}
+function sureCiz(){
+  const t=takim();$('mSure').textContent=sureYaz(t.kalan);$('mSure').classList.toggle('az',isFinite(t.kalan)&&t.kalan<=10&&!t.bitti);
+  $('skorlar').innerHTML=O.tk.map((x,i)=>`<div class="skor ${x.sinif}${O.tk.length>1&&i===O.sira&&!x.bitti?' sirada':''}${x.bitti?' bitti':''}">${x.ad?`<small>${x.ad}</small>`:''}✓ ${say(x,'dogru')}${isFinite(x.kalan)?` <small class="zm">⏱ ${sureYaz(x.kalan)}</small>`:''}</div>`).join('');
+}
+
+// --- soru paneli ---
+function soruCiz(){
+  const x=simdiki(),q=x.q;
+  $('kHarf').textContent=x.h;$('kHarf').className=x.d==='pas'?'pas':'';
+  $('kKural').innerHTML=esc(q.k==='i'?`İçinde ${x.h} harfi var`:`${x.h} harfiyle başlar`)+(x.d==='pas'?'<small>pas geçilmişti</small>':'');
+  $('ipucu').textContent=q.s;
+  $('bilgi').textContent='';$('bilgi').className='bilgi';
+  if(AYAR.cevap==='secmeli'){
+    O.secenek=karistir([q.d].concat((q.y||[]).filter(y=>y&&y!==q.d).slice(0,3)));
+    const s=$('secenekler');s.classList.remove('kilit');
+    s.innerHTML=O.secenek.map((y,i)=>`<button class="sk" data-i="${i}"><i>${i+1}</i>${esc(y)}</button>`).join('');
+  }else{
+    const c=$('cevap');c.className='cevap';c.textContent='• • •';
+  }
+}
+$('secenekler').addEventListener('click',e=>{const b=e.target.closest('.sk');if(!b||!O)return;const y=O.secenek[+b.dataset.i];cevapla(y===simdiki().q.d,b)});
+
+function cevapla(dogru,btn){
+  if(!O||!O.calisiyor||O.beklet)return;
+  const x=simdiki();x.d=dogru?'dogru':'yanlis';O.beklet=true;
+  if(AYAR.cevap==='secmeli'){
+    const s=$('secenekler');s.classList.add('kilit');
+    s.querySelectorAll('.sk').forEach(b=>{const y=O.secenek[+b.dataset.i];b.classList.add(y===x.q.d?'dogru':b===btn?'yanlis':'soluk')});
+  }else{
+    const c=$('cevap');c.textContent=x.q.d;c.className='cevap acik'+(dogru?'':' kotu');
+  }
+  const bl=$('bilgi');
+  if(dogru){ses.dogru();bl.textContent='✓ Doğru!';bl.className='bilgi iyi'}
+  else{ses.yanlis();bl.textContent='✗ Doğru cevap: '+x.q.d;bl.className='bilgi kotu'}
+  roscoCiz();
+  setTimeout(()=>{if(!O)return;O.beklet=false;sonra(dogru?null:'✗ YANLIŞ CEVAP')},dogru?900:2200);
+}
+function pas(){
+  if(!O||!O.calisiyor||O.beklet)return;
+  const x=simdiki();x.d='pas';O.beklet=true;ses.pas();
+  const bl=$('bilgi');bl.textContent='PASAPAROLA! Bu harf turun sonunda yeniden gelecek.';bl.className='bilgi pas';
+  roscoCiz();
+  setTimeout(()=>{if(!O)return;O.beklet=false;sonra('⏭ PASAPAROLA')},650);
+}
+function goster(){
+  if(!O||!O.calisiyor||O.beklet||AYAR.cevap!=='sozlu')return;
+  const c=$('cevap');c.textContent=simdiki().q.d;c.className='cevap acik';
+}
+// Sıradaki cevaplanmamış (boş ya da pas) harf; çemberin sonundan başa dönünce yeni tur.
+function sonrakiIdx(t){const n=t.harfler.length;for(let k=1;k<=n;k++){const j=(t.idx+k)%n;const d=t.harfler[j].d;if(d==='bos'||d==='pas'){if(j<=t.idx)t.tur++;return j}}return -1}
+// neden: null → aynı oyuncu devam eder; metin → takım modunda sıra karşı takıma geçer.
+function sonra(neden){
+  const t=takim();const j=sonrakiIdx(t);
+  if(j<0)t.bitti=true;else t.idx=j;
+  const diger=O.tk.findIndex((x,i)=>i!==O.sira&&!x.bitti);
+  if(t.bitti){O.calisiyor=false;if(diger>=0)return siraVer(diger,'🎉 '+t.ad.toLocaleUpperCase('tr')+' BÜTÜN HARFLERİ BİTİRDİ');return bitir()}
+  if(neden&&diger>=0)return siraVer(diger,neden);
+  roscoCiz();soruCiz();
+}
+function sureBitti(){
+  const t=takim();t.kalan=0;t.bitti=true;O.calisiyor=false;ses.bitti();roscoCiz();
+  const diger=O.tk.findIndex((x,i)=>i!==O.sira&&!x.bitti);
+  if(diger>=0)siraVer(diger,'⏰ '+t.ad.toLocaleUpperCase('tr')+' TAKIMININ SÜRESİ BİTTİ');
+  else perde({ust:'⏰ SÜRE BİTTİ',bas:O.tk.length>1?'Oyun bitti':'Süre doldu!',alt:'',btn:'Sonuçlar ▶',renk:'var(--mercan)'},bitir);
+}
+
+// --- perde: sıra değişimi, mola, süre bitimi ---
+function perde(p,fn){
+  $('pUst').textContent=p.ust||'';$('pBas').textContent=p.bas||'';$('pAlt').textContent=p.alt||'';$('pBtn').textContent=p.btn||'▶ Başla';
+  $('perde').style.setProperty('--pr',p.renk||'var(--gok)');
+  O.perdeFn=fn;$('perde').classList.add('acik');document.body.classList.add('perdeli');
+}
+function perdeKapat(){if(!$('perde').classList.contains('acik'))return;$('perde').classList.remove('acik');document.body.classList.remove('perdeli');const fn=O&&O.perdeFn;if(O)O.perdeFn=null;fn&&fn()}
+$('pBtn').onclick=perdeKapat;
+function siraVer(i,neden){
+  O.calisiyor=false;O.sira=i;const t=takim();
+  roscoCiz();soruCiz();
+  const bas=t.ad?`Sıra ${t.ad} takımında`:'Hazır mısınız?';
+  const kalan=t.harfler.filter(x=>x.d==='bos'||x.d==='pas').length;
+  const alt=`${kalan} harf kaldı${isFinite(t.kalan)?' · süre '+sureYaz(t.kalan):''}${say(t,'dogru')?' · ✓ '+say(t,'dogru'):''}`;
+  perde({ust:neden,bas,alt,btn:'▶ Başla',renk:t.renk},()=>{ses.basla();O.son=performance.now();O.calisiyor=true});
+}
+function mola(){
+  if(!O||!O.calisiyor||O.beklet)return;
+  O.calisiyor=false;const t=takim();
+  perde({ust:'DURAKLATILDI',bas:'⏸ Mola',alt:isFinite(t.kalan)?'Kalan süre '+sureYaz(t.kalan):'',btn:'▶ Devam',renk:t.renk},()=>{O.son=performance.now();O.calisiyor=true});
+}
+
+// --- süre ---
+setInterval(()=>{
+  if(!O)return;const now=performance.now();const dt=(now-O.son)/1000;O.son=now;
+  if(!O.calisiyor||O.beklet||!$('oyun').classList.contains('aktif'))return;
+  const t=takim();if(!isFinite(t.kalan))return;
+  const once=Math.ceil(t.kalan);t.kalan-=dt;const simdi=Math.ceil(t.kalan);
+  if(t.kalan<=0){sureBitti();return}
+  if(simdi!==once){if(simdi<=10)ses.saat();sureCiz()}
+},100);
+
+// --- bitiş ---
+function konfeti(n){const k=$('konfeti');const r=['#E2574C','#0D9488','#0284C7','#D99A1E','#FDE68A'];
+  for(let i=0;i<(n||60);i++){const c=document.createElement('i');c.style.left=Math.random()*100+'vw';c.style.background=r[i%r.length];
+    c.style.animationDuration=(1.4+Math.random()*1.6)+'s';c.style.animationDelay=(Math.random()*.4)+'s';c.style.transform=`rotate(${Math.random()*360}deg)`;k.appendChild(c);
+    setTimeout(()=>c.remove(),3600)}}
+function bitir(){
+  if(!O)return;O.calisiyor=false;
+  const tk=O.tk;
+  if(tk.length>1){
+    const [a,b]=tk.map(t=>({d:say(t,'dogru'),y:say(t,'yanlis')}));
+    const kaz=a.d!==b.d?(a.d>b.d?0:1):a.y!==b.y?(a.y<b.y?0:1):-1;
+    $('bitisBas').textContent=kaz<0?'Berabere!':`${tk[kaz].ad} takımı kazandı!`;
+    $('bitisBas').style.color=kaz<0?'':tk[kaz].renk;
+    $('yildiz').innerHTML='';
+  }else{
+    const t=tk[0],d=say(t,'dogru'),n=t.harfler.length,o=d/n;
+    $('bitisBas').textContent=`${n} harften ${d} doğru`;$('bitisBas').style.color='';
+    const y=o>=.9?3:o>=.65?2:o>=.35?1:0;
+    $('yildiz').innerHTML='★'.repeat(y)+`<b>${'★'.repeat(3-y)}</b>`;
+  }
+  $('bitisSkor').innerHTML=tk.map(t=>`<div style="--tr:${t.renk}">${t.ad?`<h3>${t.ad}</h3>`:''}<span style="color:#0F766E">✓ ${say(t,'dogru')} doğru</span><span style="color:#B4382E">✗ ${say(t,'yanlis')} yanlış</span><span style="color:#A8760F">⏭ ${say(t,'pas')+say(t,'bos')} cevapsız</span></div>`).join('');
+  $('ozet').innerHTML=tk.map(t=>`<div class="ozet-k"><h4>${t.ad?t.ad+' · ':''}Cevaplar</h4><div class="ozet-liste">${t.harfler.map(x=>`<span class="${x.d}"><b>${esc(x.h)}</b>${esc(x.q.d)}</span>`).join('')}</div></div>`).join('');
+  ekran('bitis');ses.final();konfeti(70);
+}
+
+// --- düğmeler ---
+$('basla').onclick=basla;$('tekrarBtn').onclick=basla;$('ayarBtn').onclick=()=>{O=null;ekran('giris')};
+$('pasBtn').onclick=pas;
+$('dogruBtn').onclick=()=>cevapla(true);$('yanlisBtn').onclick=()=>cevapla(false);$('gosterBtn').onclick=goster;
+$('molaBtn').onclick=mola;
+let onceCalisiyor=false;
+$('cikBtn').onclick=()=>{if(O){onceCalisiyor=O.calisiyor;O.calisiyor=false}$('onay').classList.add('acik')};
+$('hayirBtn').onclick=()=>{$('onay').classList.remove('acik');if(O&&onceCalisiyor){O.son=performance.now();O.calisiyor=true}};
+$('evetBtn').onclick=()=>{$('onay').classList.remove('acik');$('perde').classList.remove('acik');document.body.classList.remove('perdeli');O=null;ekran('giris')};
+function sesCiz(){$('sesBtn').textContent=sessiz?'🔇':'🔊'}sesCiz();
+$('sesBtn').onclick=()=>{sessiz=!sessiz;yaz('mamoste-paso-sessiz',sessiz);sesCiz()};
+const tamEkranVar=!!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen);
+if(!tamEkranVar)$('tamBtn').style.display='none';
+$('tamBtn').onclick=()=>{const d=document.documentElement;if(document.fullscreenElement||document.webkitFullscreenElement){(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else{(d.requestFullscreen||d.webkitRequestFullscreen).call(d)}};
+document.addEventListener('keydown',e=>{
+  if($('onay').classList.contains('acik'))return;
+  if($('perde').classList.contains('acik')){if(e.key==='Enter'||e.key===' '){e.preventDefault();perdeKapat()}return}
+  if(!O||!$('oyun').classList.contains('aktif'))return;
+  const k=e.key.toLocaleLowerCase('tr');
+  if(k===' '||k==='p'){e.preventDefault();pas()}
+  else if(AYAR.cevap==='sozlu'){if(k==='d')cevapla(true);else if(k==='y')cevapla(false);else if(k==='c')goster()}
+  else if(/^[1-4]$/.test(k)){const b=document.querySelectorAll('#secenekler .sk')[+k-1];b&&b.click()}
+});
+// Tıklanan düğme odakta kalmasın: boşluk/Enter tuşu onu yeniden tetiklemesin.
+document.addEventListener('click',e=>{const b=e.target.closest('button');b&&b.blur()});
+</script>
+</body></html>
